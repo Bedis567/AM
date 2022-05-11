@@ -1,16 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+ import React from 'react';
+import { StyleSheet } from 'react-native'
+
+
+import { Provider } from 'react-native-paper'
 import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 import GuestStack from './navigation/GuestStack'
 
-const AppContainer = () => {
+const Stack = createStackNavigator();
+export default function AppContainer() {
   return (
-    <NavigationContainer>
-     <GuestStack/>
-    </NavigationContainer>
+    <Provider>
+      <NavigationContainer>
+        <GuestStack />
+      </NavigationContainer>
+    </Provider>
   )
 }
-
-export default AppContainer
-
-const styles = StyleSheet.create({})
