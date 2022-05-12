@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, TextInput, StyleSheet, Dimensions } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import colors from "../config/colors";
 
 const { width, height } = Dimensions.get("screen");
 
@@ -35,7 +36,7 @@ const Input = ({ icon, size, placeholder, onChangeText }) => {
           style={{ fontSize: 16 }}
           placeholder={placeholder}
           placeholderTextColor="#555"
-          onChangeText={onChangeText}
+          onChangeText={()=>onChangeText}
         />
       </View>
     </View>
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#ddd",
+    backgroundColor: colors.lightGrey,
     width: width / 1.2,
     borderRadius: 15,
     marginVertical: 10,

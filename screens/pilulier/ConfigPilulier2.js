@@ -73,7 +73,7 @@ title:{
   textAlign: 'center',
   fontSize:48,
   color: colors.purple ,
-  fontFamily:'lobster',
+  fontFamily:'Lobster',
   justifyContent:'flex-start'
 },
 titleContainer:{

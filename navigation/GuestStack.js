@@ -21,11 +21,12 @@ import ChoixPilulier from '../screens/pilulier/ChoixPilulier'
 import ConfigPilulier2 from '../screens/pilulier/ConfigPilulier2'
 import AlimenterConfigurerPilulier from '../screens/pilulier/AlimenterConfigurerPilulier'
 import ConfigRappelsUtiles from '../screens/Rappels/ConfigRappelsUtiles'
+import Test from '../Test'
 const Stack = createStackNavigator();
 
 const GuestStack = () => {
   return (
-    <Stack.Navigator  initialRouteName={Route.PILULIER1} >
+    <Stack.Navigator  initialRouteName={Route.RAPPELS1} >
      
       <Stack.Screen name={Route.REGISTER_MALADE} component={RegisterScreen} />
       <Stack.Screen name={Route.WELCOME} component={WelcomeScreen} />
@@ -47,7 +48,7 @@ const GuestStack = () => {
       <Stack.Screen name={Route.PILULIER4} component={ConfigPilulier2} />
       <Stack.Screen name={Route.PILULIER3} component={AlimenterConfigurerPilulier} />
       <Stack.Screen name={Route.RAPPELS1} component={ConfigRappelsUtiles} />
-      
+      <Stack.Screen name={Route.TEST} component={Test} />
     </Stack.Navigator>
   )
 }

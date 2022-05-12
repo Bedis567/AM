@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    fontFamily:'lobster',
+    fontFamily:'Lobster',
     color: colors.purple ,
     alignItems : 'center' ,
       justifyContent: 'flex-start',

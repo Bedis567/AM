@@ -81,7 +81,7 @@ title:{
     textAlign: 'center',
     fontSize:40,
     color: 'black' ,
-    fontFamily:'lobster',
+    fontFamily:'Lobster',
     justifyContent:'flex-start'
 },
 titleContainer:{

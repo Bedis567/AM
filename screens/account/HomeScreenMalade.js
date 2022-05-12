@@ -10,7 +10,7 @@ const HomeScreenMalade = (props) => {
   
   return (
     <View style={styles.container} >
-   <TouchableOpacity style={{flex:0.4,top:50}} onPress = {() => props.navigation.navigate('Urgence1')}> 
+   <TouchableOpacity style={{ padding:10}} onPress = {() => props.navigation.navigate('Urgence1')}> 
      <Image style={{width:150,height:150}}  
       source={require('../../assets/urgencelogo.png')} />
       
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     },
 title:{
     alignItems:'flex-start',
-    fontFamily:'lobster',
+    fontFamily:'Lobster',
     fontSize:48,
     color:colors.purple },
 titleContainer:{

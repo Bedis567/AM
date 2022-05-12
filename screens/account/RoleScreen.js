@@ -39,9 +39,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 52,
     
-    fontWeight: 'bold',
+   
     letterSpacing: 0.25,
-    fontFamily:'lobster',
+    fontFamily:'Lobster',
     color: colors.purple ,
     alignItems : 'center' ,
       justifyContent: 'flex-start',

@@ -20,4 +20,5 @@ export default Object.freeze({
     PILULIER3:'Pilulier3' ,
     PILULIER4:'Pilulier4' ,
     RAPPELS1: 'Rappels1' ,
+    TEST:'Test',
 }) 

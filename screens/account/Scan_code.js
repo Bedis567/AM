@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize:48,
         color: colors.purple ,
-        fontFamily:'lobster',
+        fontFamily:'Lobster',
         top:20,
         justifyContent:'flex-start',}
 })

@@ -11,7 +11,7 @@ import AppLoading from "expo-app-loading";
 export default function App() {
 const [user,setUser] = useState(null)
 let [fontsLoaded] = useFonts({
-      'lobster': require('./assets/fonts/Lobster/Lobster-Regular.ttf'),
+      'Lobster': require('./assets/fonts/Lobster/Lobster-Regular.ttf'),
       'Montserrat': require('./assets/fonts/Montserrat/Montserrat-Bold.ttf'),
       'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
       'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),

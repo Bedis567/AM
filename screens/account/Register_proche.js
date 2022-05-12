@@ -16,13 +16,19 @@ const Register_proche = (props) => {
   return (
     <SafeAreaView  style={{backgroundColor:colors.primary, alignItems:'center', flex:1}}>
     
-      <View style={{flex:0.15}}><Text style={styles.textStyle}>Aide-Mémoire</Text></View> 
+      <View style={{flex:0.15}}><Text style={{fontSize: 48,
+  
+  letterSpacing: 0.25,
+  fontFamily:'Lobster',
+  color: colors.purple ,
+  alignItems : 'center' ,
+    justifyContent: 'flex-start',}}>Aide-Mémoire</Text></View> 
       <View style={{backgroundColor:colors.pastelGreen,justifyContent: "center",flex:0.1, width:"100%"}}>
       <Text style={styles.textStyle2}>Créer votre profil</Text></View> 
      <ScrollView style={{flex:0.65}} contentContainerStyle={{alignItems:'center'}}  > 
      <Input icon="md-person" placeholder="Nom Complet" />
           <Input icon="md-mail" placeholder="Email" />
-          <Display icon="md-location" label="location"/>
+          <Display icon="md-location" label="localisation"/>
           
          <View><Text style={styles.textStyle3}>Date de naissance</Text><View style={{backgroundColor:"#ddd", borderRadius:12, marginVertical:14}}>
            
@@ -214,7 +220,7 @@ textStyle:{
   
   fontWeight: 'bold',
   letterSpacing: 0.25,
-  fontFamily:'lobster',
+  fontFamily:'Lobster',
   color: colors.purple ,
   alignItems : 'center' ,
     justifyContent: 'flex-start',

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,TouchableOpacity,ScrollView ,SafeAreaView ,TextInput } from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity,SafeAreaView ,TextInput,ScrollView} from 'react-native'
 import React,{useState} from 'react'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import colors from '../../config/colors'
@@ -46,10 +46,11 @@ let fDate = tempDate.getDate() +'/'+(tempDate.getMonth() +1)+'/'+tempDate.getFul
   
     };
   return (
-    <View  style={{backgroundColor:colors.primary, alignItems:'center', flex:1}}>
+    <SafeAreaView  style={{backgroundColor:colors.primary, alignItems:'center', flex:1}}>
     <View style={styles.container}>
       <View style={{top:0}}><Text style={styles.title}>Rappels Utiles</Text></View>
-      <ScrollView style={{flex:0.7}} contentContainerStyle={{alignItems:'center'}}  > 
+
+      <ScrollView  style={{backgroundColor:'red', width:'100%'}} contentContainerStyle={{alignItems:'center'}} > 
       <Text style={{fontFamily:"Montserrat-Bold", top:35, fontSize:30, textAlign:'center'}}>Ajouter un nouveau Rappel</Text>
       
       <View style={{alignItems:'center', top:70}}>
@@ -116,9 +117,9 @@ let fDate = tempDate.getDate() +'/'+(tempDate.getMonth() +1)+'/'+tempDate.getFul
 
 </View>
 
-</ScrollView>  
-    </View>
-    </View>
+</ScrollView></View>
+    
+    </SafeAreaView>
   )
 }
 
@@ -134,7 +135,7 @@ const styles = StyleSheet.create({
       top:10},
   title:{
     alignItems:'flex-start',
-    fontFamily:'lobster',
+    fontFamily:'Lobster',
     fontSize:48,
     color:colors.black,
 alignItems:'center',

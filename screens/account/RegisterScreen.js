@@ -77,11 +77,9 @@ const styles = StyleSheet.create({
   },
 
   textStyle:{
-    fontSize: 40,
-    
-    fontWeight: 'bold',
+    fontSize: 48,
     letterSpacing: 0.25,
-    fontFamily:'lobster',
+    fontFamily:'Lobster',
     color: colors.purple ,
     alignItems : 'center' ,
       justifyContent: 'flex-start',
