@@ -32,7 +32,7 @@ const Stack = createStackNavigator();
 
 const GuestStack = () => {
   return (
-    <Stack.Navigator  initialRouteName={Route.REGISTER_MALADE} >
+    <Stack.Navigator  initialRouteName={Route.ROLE} >
     
      
       <Stack.Screen name={Route.REGISTER_MALADE} component={RegisterScreen} options={{headerShown:false}}/>
