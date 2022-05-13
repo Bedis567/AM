@@ -22,33 +22,34 @@ import ConfigPilulier2 from '../screens/pilulier/ConfigPilulier2'
 import AlimenterConfigurerPilulier from '../screens/pilulier/AlimenterConfigurerPilulier'
 import ConfigRappelsUtiles from '../screens/Rappels/ConfigRappelsUtiles'
 import Test from '../Test'
+import { Header } from 'react-navigation-stack'
 const Stack = createStackNavigator();
 
 const GuestStack = () => {
   return (
     <Stack.Navigator  initialRouteName={Route.RAPPELS1} >
      
-      <Stack.Screen name={Route.REGISTER_MALADE} component={RegisterScreen} />
-      <Stack.Screen name={Route.WELCOME} component={WelcomeScreen} />
-      <Stack.Screen name={Route.ROLE} component={RoleScreen} />
-      <Stack.Screen name={Route.LOGIN2} component={LoginScreen2} />
-      <Stack.Screen name={Route.CONNECTION} component={ConnectionAccount} />
-      <Stack.Screen name={Route.CODE} component={CodeMalade} />
-      <Stack.Screen name={Route.SCAN} component={Scan_code} />
-      <Stack.Screen name={Route.PROBLEM} component={DeclareProblem} />
-      <Stack.Screen name={Route.REGISTER_PROCHE} component={Register_proche} />
+      <Stack.Screen name={Route.REGISTER_MALADE} component={RegisterScreen} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.WELCOME} component={WelcomeScreen} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.ROLE} component={RoleScreen} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.LOGIN2} component={LoginScreen2} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.CONNECTION} component={ConnectionAccount} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.CODE} component={CodeMalade} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.SCAN} component={Scan_code} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.PROBLEM} component={DeclareProblem} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.REGISTER_PROCHE} component={Register_proche} options={{headerShown:false}}/>
     
-      <Stack.Screen name={Route.HOME_PROCHE} component={HomeScreenProche} />
-      <Stack.Screen name={Route.HOME_MALADE} component={HomeScreenMalade} />
-      <Stack.Screen name={Route.URGENCE1} component={UrgenceScreen1} />
-      <Stack.Screen name={Route.URGENCE2} component={UrgenceScreen2} />
-      <Stack.Screen name={Route.URGENCE3} component={UrgenceScreen3} />
-      <Stack.Screen name={Route.URGENCE4} component={UrgenceScreen4} />
-      <Stack.Screen name={Route.PILULIER1} component={ChoixPilulier} />
-      <Stack.Screen name={Route.PILULIER4} component={ConfigPilulier2} />
-      <Stack.Screen name={Route.PILULIER3} component={AlimenterConfigurerPilulier} />
-      <Stack.Screen name={Route.RAPPELS1} component={ConfigRappelsUtiles} />
-      <Stack.Screen name={Route.TEST} component={Test} />
+      <Stack.Screen name={Route.HOME_PROCHE} component={HomeScreenProche} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.HOME_MALADE} component={HomeScreenMalade} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.URGENCE1} component={UrgenceScreen1} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.URGENCE2} component={UrgenceScreen2} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.URGENCE3} component={UrgenceScreen3} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.URGENCE4} component={UrgenceScreen4} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.PILULIER1} component={ChoixPilulier} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.PILULIER4} component={ConfigPilulier2} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.PILULIER3} component={AlimenterConfigurerPilulier} options={{headerShown:false}} />
+      <Stack.Screen name={Route.RAPPELS1} component={ConfigRappelsUtiles} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.TEST} component={Test} options={{headerShown:false}}/>
     </Stack.Navigator>
   )
 }
