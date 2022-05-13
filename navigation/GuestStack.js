@@ -23,15 +23,17 @@ import AlimenterConfigurerPilulier from '../screens/pilulier/AlimenterConfigurer
 import ConfigRappelsUtiles from '../screens/Rappels/ConfigRappelsUtiles'
 import ConfigRappelsPilules from '../screens/Rappels/ConfigRappelsPilules'
 
-import { Header } from 'react-navigation-stack'
 
 import LoginScreenProche from '../screens/account/LoginScreenProche'
 import LoginScreenMalade from '../screens/account/LoginScreenMalade'
+import Test from '../Test'
+import { Header } from 'react-navigation-stack'
 const Stack = createStackNavigator();
 
 const GuestStack = () => {
   return (
     <Stack.Navigator  initialRouteName={Route.REGISTER_MALADE} >
+    
      
       <Stack.Screen name={Route.REGISTER_MALADE} component={RegisterScreen} options={{headerShown:false}}/>
       <Stack.Screen name={Route.WELCOME} component={WelcomeScreen} options={{headerShown:false}}/>
@@ -57,6 +59,7 @@ const GuestStack = () => {
       <Stack.Screen name={Route.RAPPELS1} component={ConfigRappelsUtiles} options={{headerShown:false}}/>
       <Stack.Screen name={Route.RAPPELS2} component={ConfigRappelsPilules} options={{headerShown:false}}/>
       
+      <Stack.Screen name={Route.TEST} component={Test} options={{headerShown:false}}/>
     </Stack.Navigator>
   )
 }

@@ -7,7 +7,7 @@ import Display from '../../components/Display'
 import {Picker} from '@react-native-picker/picker';
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import Ionicons from "@expo/vector-icons/Ionicons";
-import {addToHeight, addToWeight} from "../../config/Demensions"
+import {adaptToHeight, adaptToWidth} from "../../config/Demensions"
 
 const RegisterScreen = (props) => {
     const [selectedStade, setSelectedStade] = useState();
@@ -20,7 +20,7 @@ const RegisterScreen = (props) => {
        alignItems: "center",
        backgroundColor: colors.primary,
        borderBottomColor:'black', borderBottomWidth:0.7}}>
-     <Image style={{width: addToWeight(0.5),height:addToHeight(0.2) , margin: addToHeight(0.5) }} 
+     <Image style={{width: adaptToWidth(0.5),height:adaptToHeight(0.2) , margin: adaptToHeight(0.5) }} 
      source={require('../../assets/logo.png')} />
       <Text style={{fontFamily:"Lobster", margin:5, fontSize:30, color:colors.purple}}>Aide-Mémoire</Text>
      <Text style={{fontFamily:"Lobster", margin:5, fontSize:15}}>Vos biens aimés, en pleine sécurité </Text>

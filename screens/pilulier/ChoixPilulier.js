@@ -8,36 +8,35 @@ const ChoixPilulier = (props) => {
       <View style={styles.container}>
           <View ><Text style={styles.title}>Aide-Mémoire</Text></View>  
     <ScrollView style={{ width:'100%', marginVertical:50}} contentContainerStyle={{alignItems:'center'}}>
-    <TouchableOpacity style={{marginBottom:10}}  onPress = {() => props.navigation.navigate('Pilulier3')}>
+    <TouchableOpacity style={{marginBottom:10}}>
        <View style={{alignItems:'center', borderColor:'black', borderWidth:2,  width:340}}><Image style={{width:200,height:200,marginTop:20}} 
       source={require('../../assets/Pilbox.png')} />
-      <Text style={{fontFamily:'Montserrat-Bold', fontSize:30, color:'black'}}>Semainier Simplifié</Text>
+      <Text style={{fontFamily:'Montserrat-Bold', fontSize:30, color:'black'}}  onPress = {() => props.navigation.navigate('Pilulier3')}>Semainier Simplifié</Text>
       </View>
       </TouchableOpacity>
-      <TouchableOpacity style={{marginBottom:10}}  onPress = {() => props.navigation.navigate('Pilulier3')}>
+      <TouchableOpacity style={{marginBottom:10}}>
       <View style={{alignItems:'center', borderColor:'black', borderWidth:2,  width:340}}>
           <Image style={{width:200,height:200,marginTop:20}} 
       source={require('../../assets/spécial.png')} />
-      <Text style={{fontFamily:'Montserrat-Bold', fontSize:30, color:'black'}}>Spécial Alzheimer</Text>
+      <Text style={{fontFamily:'Montserrat-Bold', fontSize:30, color:'black'}}  onPress = {() => props.navigation.navigate('Pilulier3')}>Spécial Alzheimer</Text>
       </View>
       </TouchableOpacity>
-     <TouchableOpacity style={{marginBottom:10}}  onPress = {() => props.navigation.navigate('Pilulier3')}>
+     <TouchableOpacity style={{marginBottom:10}}>
      <View style={{alignItems:'center', borderColor:'black', borderWidth:2,  width:340}}>
          <Image style={{width:200,height:200,marginTop:20}} 
       source={require('../../assets/semainier.png')} />
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:30, color:'black'}}>Semainier Classique</Text>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:30, color:'black'}}  onPress = {() => props.navigation.navigate('Pilulier3')}>Semainier Classique</Text>
        </View>
       </TouchableOpacity>
-     <TouchableOpacity  onPress = {() => props.navigation.navigate('Pilulier3')}>
+     <TouchableOpacity>
      <View style={{alignItems:'center', borderColor:'black', borderWidth:2, width:340}}>
          <Image style={{width:200,height:200,marginTop:20}} 
       source={require('../../assets/journalier.png')} />
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:30, color:'black'}}>Journalier</Text>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:30, color:'black'}}  onPress = {() => props.navigation.navigate('Pilulier3')}>journalier</Text>
        </View>
       </TouchableOpacity>
-      <TouchableOpacity style={{backgroundColor:colors.purple, width:'60%', height:70, justifyContent:'center', alignItems:'center', borderRadius:50, margin:25}}><Text style={{color:'white', fontFamily:'Montserrat-Bold',fontSize:30 }} 
-      onPress = {() => props.navigation.navigate('Pilulier3')}>Autre</Text></TouchableOpacity>
-      <TouchableOpacity><Text style={{fontFamily:'Montserrat-Bold', color:'black', fontSize:15}} onPress = {() => props.navigation.navigate('Home_proche')}>Passer pour le moment</Text></TouchableOpacity>
+      <TouchableOpacity style={{backgroundColor:colors.purple, width:'60%', height:70, justifyContent:'center', alignItems:'center', borderRadius:50, margin:25}}><Text style={{color:'white', fontFamily:'Montserrat-Bold',fontSize:30 }}  onPress = {() => props.navigation.navigate('Pilulier3')}>Autre</Text></TouchableOpacity>
+      <TouchableOpacity><Text style={{fontFamily:'Montserrat-Bold', color:'black', fontSize:15}}  onPress = {() => props.navigation.navigate('Home_proche')}>Passer pour le moment</Text></TouchableOpacity>
  </ScrollView></View>
   )
 }

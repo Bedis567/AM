@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 52,
     
-    fontWeight: 'bold',
+   
     letterSpacing: 0.25,
     fontFamily:'Lobster',
     color: colors.purple ,

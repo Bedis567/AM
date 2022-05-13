@@ -24,4 +24,5 @@ export default Object.freeze({
     RAPPELS1: 'Rappels1' ,
     RAPPELS2:'Rappels2',
     
+    TEST:'Test',
 }) 
