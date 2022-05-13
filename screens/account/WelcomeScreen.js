@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize:48,
         color: colors.purple ,
-        fontFamily:'lobster',
+        fontFamily:'Lobster',
         margin:10,
         justifyContent:'flex-start',}
       

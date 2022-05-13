@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
       top:10},
   title:{
     alignItems:'flex-start',
-    fontFamily:'lobster',
+    fontFamily:'Lobster',
     fontSize:48,
     color:colors.black,
 alignItems:'center',

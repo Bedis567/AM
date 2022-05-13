@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     },
 title:{
     alignItems:'flex-start',
-    fontFamily:'lobster',
+    fontFamily:'Lobster',
     fontSize:48,
     color:colors.purple },
 titleContainer:{

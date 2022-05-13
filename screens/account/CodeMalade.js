@@ -2,6 +2,7 @@ import { StyleSheet, Text, View , TouchableOpacity} from 'react-native'
 import QRCode from 'react-native-qrcode-svg'
 import colors from '../../config/colors'
 import { useEffect,useState } from 'react'
+import { Dimensions } from 'react-native-web'
 
 const CodeMalade = (props) => {
   const chars =
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    fontFamily:'lobster',
+    fontFamily:'Lobster',
     color: colors.purple ,
     alignItems : 'center' ,
       justifyContent: 'flex-start',

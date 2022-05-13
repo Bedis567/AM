@@ -45,7 +45,7 @@ const HomeScreenProche = (props) => {
 
           </View>
           <View style={{flex:0.3, flexDirection:'row',justifyContent:'center'}}>
-          <TouchableOpacity style={{alignItems:'center',marginTop:45,left:-15,marginRight:20}}><Ionicons name={'warning-outline'} style={{color:colors.black}} size={60}/>
+          <TouchableOpacity style={{alignItems:'center',marginTop:45,left:-15,marginRight:20}}  onPress = {() => props.navigation.navigate('Problem')}><Ionicons name={'warning-outline'} style={{color:colors.black}} size={60}/>
           <Text style={{marginVertical:10,
             fontFamily:'Montserrat',
             fontSize:18, width:150, textAlign:'center'}}>Déclarer un problème</Text></TouchableOpacity>
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     },
 title:{
   alignItems:'flex-start',
-  fontFamily:'lobster',
+  fontFamily:'Lobster',
   fontSize:48,
   color:colors.purple },
 titleContainer:{
