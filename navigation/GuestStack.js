@@ -23,11 +23,17 @@ import AlimenterConfigurerPilulier from '../screens/pilulier/AlimenterConfigurer
 import ConfigRappelsUtiles from '../screens/Rappels/ConfigRappelsUtiles'
 import Test from '../Test'
 import { Header } from 'react-navigation-stack'
+import NotificationsOublie from '../screens/Notifications/NotificationsOublie'
+import NotificationsDone from '../screens/Notifications/NotificationsDone'
+import NotificationsPending from '../screens/Notifications/NotificationsPending'
+import RappelsEtPilulierDone from '../screens/Rappels/RappelsEtPilulierDone'
+import RappelsEtPilulierOublie from '../screens/Rappels/RappelsEtPilulierOublie'
+import RappelsEtPilulierPending from '../screens/Rappels/RappelsEtPilulierPending'
 const Stack = createStackNavigator();
 
 const GuestStack = () => {
   return (
-    <Stack.Navigator  initialRouteName={Route.RAPPELS1} >
+    <Stack.Navigator  initialRouteName={Route.TEST} >
      
       <Stack.Screen name={Route.REGISTER_MALADE} component={RegisterScreen} options={{headerShown:false}}/>
       <Stack.Screen name={Route.WELCOME} component={WelcomeScreen} options={{headerShown:false}}/>
@@ -50,6 +56,12 @@ const GuestStack = () => {
       <Stack.Screen name={Route.PILULIER3} component={AlimenterConfigurerPilulier} options={{headerShown:false}} />
       <Stack.Screen name={Route.RAPPELS1} component={ConfigRappelsUtiles} options={{headerShown:false}}/>
       <Stack.Screen name={Route.TEST} component={Test} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.NOTIFOUBLIE} component={NotificationsOublie} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.NOTIFDONE} component={NotificationsDone} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.NOTIFPENDING} component={NotificationsPending} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.RAPPELSPILULIERDONE} component={RappelsEtPilulierDone} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.RAPPELSPILULIEROUBLIE} component={RappelsEtPilulierOublie} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.RAPPELSPILULIERPENDING} component={RappelsEtPilulierPending} options={{headerShown:false}}/>
     </Stack.Navigator>
   )
 }

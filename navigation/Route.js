@@ -21,4 +21,10 @@ export default Object.freeze({
     PILULIER4:'Pilulier4' ,
     RAPPELS1: 'Rappels1' ,
     TEST:'Test',
+    NOTIFDONE:'NotificationsDone',
+    NOTIFOUBLIE:'NotificationsOublie',
+    NOTIFPENDING:'NotificationsPending',
+    RAPPELSPILULIERDONE:'RappelsEtPilulierDone',
+    RAPPELSPILULIEROUBLIE:'RappelsEtPilulierOublie',
+    RAPPELSPILULIERPENDING:'RappelsEtPilulierPending',
 }) 

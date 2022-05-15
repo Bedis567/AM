@@ -26,6 +26,7 @@ export default {
     purple:'#8E0798',
     yesGreen:'#0DA307',
     purplelight:'#c683cb',
-lightGrey: '#E1E1E1'
-
+lightGrey: '#E1E1E1',
+PastelYellow:'#FFF5BA',
+PastelOrange:'#FFABAB'
 }
