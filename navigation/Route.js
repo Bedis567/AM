@@ -3,6 +3,8 @@ export default Object.freeze({
     REGISTER_MALADE: 'Register_malade',
     WELCOME: 'Welcome',
     ROLE: 'Role',
+    LOGIN_PROCHE:'Login_proche' ,
+    LOGIN_MALADE:'Login_malade' ,
     LOGIN2: 'Login2',
     PROBLEM: 'Problem',
     CONNECTION: 'Connection',
@@ -20,6 +22,8 @@ export default Object.freeze({
     PILULIER3:'Pilulier3' ,
     PILULIER4:'Pilulier4' ,
     RAPPELS1: 'Rappels1' ,
+    RAPPELS2:'Rappels2',
+    
     TEST:'Test',
     NOTIFDONE:'NotificationsDone',
     NOTIFOUBLIE:'NotificationsOublie',

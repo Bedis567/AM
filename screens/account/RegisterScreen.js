@@ -1,25 +1,46 @@
-import { StyleSheet, Text, View ,ScrollView,SafeAreaView,TouchableOpacity,Linking} from 'react-native'
+import { StyleSheet, Text, View ,ScrollView,SafeAreaView,TouchableOpacity,Linking, Image} from 'react-native'
 import React,{useState} from 'react'
 import colors from '../../config/colors'
 import Button from '../../components/Button'
 import Input from '../../components/input'
 import Display from '../../components/Display'
 import {Picker} from '@react-native-picker/picker';
-
+import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import Ionicons from "@expo/vector-icons/Ionicons";
-
+import {adaptToHeight, adaptToWidth} from "../../config/Demensions"
 
 const RegisterScreen = (props) => {
     const [selectedStade, setSelectedStade] = useState();
   return (
-    <SafeAreaView  style={{backgroundColor:colors.primary, alignItems:'center', flex:1}}>
+    <View style={{height:'100%', width:'100%',flexDirection:'column', flex:1}}>
+    <View style={{width: "100%",
+       height: "45%",
+       alignItems: "center",
+       backgroundColor: colors.primary,
+       borderBottomColor:'black', borderBottomWidth:0.7}}>
+         
+     <Image style={{width:"45%",height:"52%", top:30 }} 
+     source={require('../../assets/logo.png')} />
+      <Text style={{fontFamily:"Lobster", margin:5, fontSize:30, top:40 , color:colors.purple}}>Aide-Mémoire</Text>
+     <Text style={{fontFamily:"Lobster", margin:5, fontSize:15, top:40}}>Vos biens aimés, en pleine sécurité </Text>
     
-      <View style={{flex:0.2}}><Text style={styles.textStyle}>Aide-Mémoire</Text></View> 
-      <View style={{backgroundColor:colors.purplelight,justifyContent: "center",flex:0.15, width:"100%"}}>
-      <Text style={styles.textStyle2}>Créer le profil du malade</Text></View> 
-     <ScrollView style={{flex:0.65}} contentContainerStyle={{alignItems:'center'}}  > 
+     <View style={{width:'100%', height:30, flexDirection:'row', top:50, justifyContent:'space-around'}}>
+         <TouchableOpacity style={{alignItems:'center'}}>
+         <Text style={{fontFamily:'Montserrat-Bold',fontSize:17 }} onPress = {() => props.navigation.navigate('Login_malade')}>S'inscrire</Text>
+         </TouchableOpacity>
+         <TouchableOpacity style={{alignItems:'center'}}>
+             <Text style={{fontFamily:'Montserrat-Bold', fontSize:17 , color:colors.purple}} >Se connecter</Text> 
+         </TouchableOpacity>
+         </View>
+         </View>
+         <View style={{justifyContent:'flex-start', alignItems:'center', width:'100%', height:'60%', top: 30}}>
+         <ScrollView style={{flex:0.65}} contentContainerStyle={{alignItems:'center'}}  > 
+             <Text style={{fontFamily:'Roboto', fontSize:20, color:'black'}}>Veuillez entrer vos informations:</Text>
+     
      <Input icon="md-person" placeholder="Nom d'utilisateur" />
           <Input icon="md-mail" placeholder="Email" />
+          <Input icon="lock-closed-outline" placeholder="Mot de passe"/>
+          <Input icon="lock-closed" placeholder="Confirmer le mot de passe" />
           <Display icon="md-location" label="location"/>
           <Input icon="md-call" placeholder="Contact Médecin"/>
          <View><Text style={styles.textStyle3}>Stade de Maladie</Text><View style={{backgroundColor:"#ddd", borderRadius:12, marginVertical:14}}><Picker
@@ -41,12 +62,28 @@ const RegisterScreen = (props) => {
         /> 
         </TouchableOpacity></View>
         </View> 
-        <TouchableOpacity style={{bottom:20, width:200, height:50, backgroundColor:colors.purplelight, borderRadius:15, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white' ,marginTop:20}} onPress = {() => props.navigation.navigate('Scan_code')}><Text style={{fontFamily:'Montserrat-Bold',fontSize:20}}>Confirmer</Text></TouchableOpacity>
-      
+        <View style={{bottom:20 , padding:10}}>
+        <BouncyCheckbox
+  size={15}
+  fillColor='#8E0798'
+  unfillColor="#f7f2e2"
+  text="J'accepte les termes et les conditions d'utilisation"
+  iconStyle={{ borderColor: colors.purple  }}
+  textStyle={{ fontFamily: "Roboto", textDecorationLine: "none", fontSize:15  }}
+  onPress={(isChecked) => {}}
+  style={{}}
+  
+/>
+
+        </View>
+        <TouchableOpacity style={{marginBottom:90, width:200, height:50, backgroundColor:colors.yesGreen, borderRadius:15, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white' ,marginTop:20}} 
+        onPress = {() => props.navigation.navigate('Code')}>
+          <Text style={{color:'white', fontFamily:'Roboto-Bold', fontSize:20}}>Confirmer</Text></TouchableOpacity>
          
    </ScrollView>
+   </View>
+   </View>
    
-    </SafeAreaView>
   )
 }
 

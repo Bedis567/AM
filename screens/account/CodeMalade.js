@@ -2,6 +2,7 @@ import { StyleSheet, Text, View , TouchableOpacity} from 'react-native'
 import QRCode from 'react-native-qrcode-svg'
 import colors from '../../config/colors'
 import { useEffect,useState } from 'react'
+import { Dimensions } from 'react-native-web'
 
 const CodeMalade = (props) => {
   const chars =

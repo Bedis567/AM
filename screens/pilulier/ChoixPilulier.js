@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, ScrollView,Image,TouchableOpacity } from 'react-native'
 import React from 'react'
 import colors from '../../config/colors'
+import Demensions from '../../config/Demensions'
 
 const ChoixPilulier = (props) => {
   return (
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
         height: "100%",
         alignItems:'center',
         backgroundColor: colors.primary, flex:1
+        
     },
     title:{
         textAlign: 'center',
