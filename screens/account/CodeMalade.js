@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View , TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View , TouchableOpacity, SafeAreaView} from 'react-native'
 import QRCode from 'react-native-qrcode-svg'
 import colors from '../../config/colors'
 import { useEffect,useState } from 'react'
-import { Dimensions } from 'react-native-web'
+import { adaptToHeight,adaptToWidth } from '../../config/Demensions'
 
 const CodeMalade = (props) => {
   const chars =
@@ -20,17 +20,17 @@ const CodeMalade = (props) => {
 
 
   return (
-    <View style={styles.back}>
-      <View style={{marginVertical:30 , alignItems:'center'}}>
+    <SafeAreaView style={styles.back}>
+      <View style={{marginVertical: adaptToHeight(0.05), alignItems:'center', flex:0.2}}>
       <Text style={styles.text}>Aide-Mémoire</Text>
       </View>
-      <View style={{marginVertical:30 , alignItems:'center'}}>
+      <View style={{marginVertical:adaptToHeight(0.05) , alignItems:'center'}}>
       <Text style={styles.text2}>Votre code QR est :</Text>
       </View>
       <View style={{alignItems:'center' , justifyContent:'center' , }} >
       <QRCode
       value={qrValue ?qrValue :'code malade'}
-      size={250}
+      size={adaptToHeight(0.3)}
       color='white'
       backgroundColor='black'
      ></QRCode>
@@ -38,15 +38,14 @@ const CodeMalade = (props) => {
        
       <Text style={styles.text4} on changeText={(text)=>(setInput(props.text)) } onPress = {() => props.navigation.navigate('Connection')}  >{randomArray}</Text>
      
-    </View></View>
+    </View></SafeAreaView>
   )
 }
 const styles = StyleSheet.create({
  text: {
-    fontSize: 40,
+    fontSize: 48,
     
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
+    letterSpacing:adaptToWidth(0.001),
     fontFamily:'Lobster',
     color: colors.purple ,
     alignItems : 'center' ,
@@ -56,8 +55,8 @@ const styles = StyleSheet.create({
   },
   text3: {
     fontSize: 15
-    ,marginVertical:15,
-    letterSpacing: 0.25,
+    ,marginVertical:adaptToHeight(0.025) ,
+    letterSpacing: adaptToWidth(0.001),
     fontFamily:'Montserrat',
     color: colors.black ,
     alignItems : 'center' ,
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
     textAlign:'center' ,  },
   text2: {
     fontSize: 25,
-    letterSpacing: 0.25,
+    letterSpacing: adaptToWidth(0.001),
     fontFamily:'Montserrat',
     color: colors.black ,
     alignItems : 'center' ,
@@ -79,8 +78,7 @@ const styles = StyleSheet.create({
 },
   back:{
     backgroundColor: colors.primary ,
-    height:'100%',
-    width:'100%' ,
+   flex:1
   }
 });
 

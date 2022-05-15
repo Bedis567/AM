@@ -22,18 +22,18 @@ import ConfigPilulier2 from '../screens/pilulier/ConfigPilulier2'
 import AlimenterConfigurerPilulier from '../screens/pilulier/AlimenterConfigurerPilulier'
 import ConfigRappelsUtiles from '../screens/Rappels/ConfigRappelsUtiles'
 import Test from '../Test'
-import { Header } from 'react-navigation-stack'
 import NotificationsOublie from '../screens/Notifications/NotificationsOublie'
 import NotificationsDone from '../screens/Notifications/NotificationsDone'
 import NotificationsPending from '../screens/Notifications/NotificationsPending'
 import RappelsEtPilulierDone from '../screens/Rappels/RappelsEtPilulierDone'
 import RappelsEtPilulierOublie from '../screens/Rappels/RappelsEtPilulierOublie'
 import RappelsEtPilulierPending from '../screens/Rappels/RappelsEtPilulierPending'
+import LoginScreenMalade from '../screens/account/LoginScreenMalade'
 const Stack = createStackNavigator();
 
 const GuestStack = () => {
   return (
-    <Stack.Navigator  initialRouteName={Route.TEST} >
+    <Stack.Navigator  initialRouteName={Route.ROLE} >
      
       <Stack.Screen name={Route.REGISTER_MALADE} component={RegisterScreen} options={{headerShown:false}}/>
       <Stack.Screen name={Route.WELCOME} component={WelcomeScreen} options={{headerShown:false}}/>
@@ -44,7 +44,6 @@ const GuestStack = () => {
       <Stack.Screen name={Route.SCAN} component={Scan_code} options={{headerShown:false}}/>
       <Stack.Screen name={Route.PROBLEM} component={DeclareProblem} options={{headerShown:false}}/>
       <Stack.Screen name={Route.REGISTER_PROCHE} component={Register_proche} options={{headerShown:false}}/>
-    
       <Stack.Screen name={Route.HOME_PROCHE} component={HomeScreenProche} options={{headerShown:false}}/>
       <Stack.Screen name={Route.HOME_MALADE} component={HomeScreenMalade} options={{headerShown:false}}/>
       <Stack.Screen name={Route.URGENCE1} component={UrgenceScreen1} options={{headerShown:false}}/>
@@ -62,6 +61,7 @@ const GuestStack = () => {
       <Stack.Screen name={Route.RAPPELSPILULIERDONE} component={RappelsEtPilulierDone} options={{headerShown:false}}/>
       <Stack.Screen name={Route.RAPPELSPILULIEROUBLIE} component={RappelsEtPilulierOublie} options={{headerShown:false}}/>
       <Stack.Screen name={Route.RAPPELSPILULIERPENDING} component={RappelsEtPilulierPending} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.LOGIN_MALADE} component={LoginScreenMalade} options={{headerShown:false}}/>
     </Stack.Navigator>
   )
 }

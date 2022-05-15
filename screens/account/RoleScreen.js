@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View , Button , TouchableOpacity , Image,ScrollView } from 'react-native'
 import React from 'react'
 import colors from '../../config/colors'
-
+import { adaptToHeight, adaptToWidth } from '../../config/Demensions'
 import Input from '../../components/input'
 
 const RoleScreen = (props) => {
@@ -9,21 +9,19 @@ const RoleScreen = (props) => {
     
     
 
-    <View style={{height:'100%', width:'100%',flexDirection:'column', flex:1}}>
-    <View style={{width: "100%",
-      marginTop:30,
-      height: "40%",
+    <View style={{flexDirection:'column', flex:1}}>
+    <View style={{flex:0.4,
        alignItems: "center",
        backgroundColor: colors.primary,
        borderBottomColor:'black', borderBottomWidth:0.7}}>
          
-     <Image style={{width:"45%",height:"50%", top:30 }} 
+     <Image style={{width:adaptToWidth(0.5),height:adaptToHeight(0.23), top:30 }} 
      source={require('../../assets/logo.png')} />
       <Text style={{fontFamily:"Lobster", margin:5, fontSize:30, top:40 , color:colors.purple}}>Aide-Mémoire</Text>
      <Text style={{fontFamily:"Lobster", margin:5, fontSize:15, top:40}}>Vos biens aimés, en pleine sécurité </Text>
     
          </View>
-         <View style={{justifyContent:'flex-start', alignItems:'center', width:'100%', height:'60%',  backgroundColor:colors.primary}}>
+         <View style={{justifyContent:'flex-start', alignItems:'center',flex:0.6,  backgroundColor:colors.primary}}>
         
              <Text style={{fontFamily:'Montserrat-Bold', fontSize:15, color:'black' , marginTop:30}}>Veuillez indiquer vote profil</Text>
     
