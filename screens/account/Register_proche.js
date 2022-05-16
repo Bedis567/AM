@@ -21,7 +21,7 @@ const Register_proche = (props) => {
        alignItems: "center",
        backgroundColor: colors.primary,
        borderBottomColor:'black', borderBottomWidth:0.7}}>
-     <Image style={{width:"45%",height:"52%", top:30 }} 
+     <Image style={{width:"45%",height:"52%", top:30 , resizeMode:'stretch'}} 
      source={require('../../assets/logo.png')} />
       <Text style={{fontFamily:"Lobster", margin:5, fontSize:30, top:40 , color:colors.purple}}>Aide-Mémoire</Text>
      <Text style={{fontFamily:"Lobster", margin:5, fontSize:15, top:40}}>Vos biens aimés, en pleine sécurité </Text>

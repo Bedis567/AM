@@ -19,17 +19,18 @@ const RegisterScreen = (props) => {
        backgroundColor: colors.primary,
        borderBottomColor:'black', borderBottomWidth:0.7}}>
          
-     <Image style={{width:"45%",height:"52%", top:30 }} 
+     <Image style={{width:"45%",height:"52%", top:30 , resizeMode:'stretch' }} 
      source={require('../../assets/logo.png')} />
       <Text style={{fontFamily:"Lobster", margin:5, fontSize:30, top:40 , color:colors.purple}}>Aide-Mémoire</Text>
      <Text style={{fontFamily:"Lobster", margin:5, fontSize:15, top:40}}>Vos biens aimés, en pleine sécurité </Text>
     
      <View style={{width:'100%', height:30, flexDirection:'row', top:50, justifyContent:'space-around'}}>
          <TouchableOpacity style={{alignItems:'center'}}>
-         <Text style={{fontFamily:'Montserrat-Bold',fontSize:17 }} onPress = {() => props.navigation.navigate('Login_malade')}>S'inscrire</Text>
+         <Text style={{fontFamily:'Montserrat-Bold',fontSize:17 , color:colors.purple}} 
+         >S'inscrire</Text>
          </TouchableOpacity>
          <TouchableOpacity style={{alignItems:'center'}}>
-             <Text style={{fontFamily:'Montserrat-Bold', fontSize:17 , color:colors.purple}} >Se connecter</Text> 
+             <Text style={{fontFamily:'Montserrat-Bold', fontSize:17 }} onPress = {() => props.navigation.navigate('Login_malade')} >Se connecter</Text> 
          </TouchableOpacity>
          </View>
          </View>

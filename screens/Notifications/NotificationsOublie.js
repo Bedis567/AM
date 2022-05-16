@@ -4,7 +4,7 @@ import colors from '../../config/colors'
 import Ionicons from "@expo/vector-icons/Ionicons"
 
 
-const NotificationsOublie = () => {
+const NotificationsOublie = (props) => {
   const [shouldShow, setShouldShow] = useState(false);
   const [shouldShow1, setShouldShow1] = useState(false);
   const [shouldShow2, setShouldShow2] =useState(false);
@@ -14,15 +14,15 @@ const NotificationsOublie = () => {
       <View style={{alignItems:'flex-start', flex:0.15,width:'95%', justifyContent:'center', marginTop:30}}>
         <Text style={styles.title}> Notifications </Text></View>
     <View style={{flex:0.15, flexDirection:'row', justifyContent:'space-between',marginBottom:10, width:350, alignItems:'center'}}>
-    <TouchableOpacity style={{alignItems:'center', opacity:0.6}}>
+    <TouchableOpacity style={{alignItems:'center', opacity:0.6}} onPress = {() => props.navigation.navigate('NotificationsPending')}>
       <Ionicons name={'notifications-circle-outline'} style={{color:colors.black}} size={60}/>
       
       </TouchableOpacity>
-      <TouchableOpacity style={{alignItems:'center' }}>
+      <TouchableOpacity style={{alignItems:'center' }} onPress = {() => props.navigation.navigate('NotificationsOublie')}>
       <Ionicons name={'close-circle-outline'} style={{color:colors.black}} size={60}/>
       <Text style={{fontFamily:'Montserrat-Bold'}}>Manqué</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={{alignItems:'center', opacity:0.6}}>
+      <TouchableOpacity style={{alignItems:'center', opacity:0.6}} onPress = {() => props.navigation.navigate('NotificationsDone')}>
       <Ionicons name={'checkmark-circle-outline'} style={{color:colors.black}} size={60}/>
       </TouchableOpacity>
     </View>

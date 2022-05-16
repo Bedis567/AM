@@ -13,7 +13,8 @@ const WelcomeScreen = (props) => {
       <Image style={{margin:10 ,width:'75.5%',height:'37.5%' ,justifyContent:'center',alignItems:'center'} }
       source={require('../../assets/logo.png')} />
       <View ><Text style={styles.textStyle}>Aide-Mémoire</Text></View> 
-    <TouchableOpacity style={{margin:20 ,left:5,top:50 ,width:'50%', height:'7%', backgroundColor:colors.yesGreen, borderRadius:15, marginTop:30, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white'}} onPress = {() => props.navigation.navigate('Role')}>
+    <TouchableOpacity style={{margin:20 ,left:5,top:50 ,width:'50%', height:'7%', backgroundColor:colors.yesGreen, borderRadius:15, marginTop:30, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white'}}
+     onPress = {() => props.navigation.navigate('Role')}>
            <Text  style={{fontSize: 15,fontFamily:'Montserrat-Bold',fontWeight: 'bold',color:colors.white}}>COMMENCER</Text>
                     </TouchableOpacity>
       <StatusBar style="auto" />

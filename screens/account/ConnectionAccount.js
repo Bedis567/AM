@@ -1,26 +1,27 @@
-import { View, Text ,StyleSheet,Button,TouchableOpacity} from 'react-native'
+import { View, Text ,StyleSheet,Button,TouchableOpacity, SafeAreaView} from 'react-native'
 import React from 'react'
 import Ionicons from "@expo/vector-icons/Ionicons"
 import colors from '../../config/colors'
+import { adaptToHeight,adaptToWidth } from '../../config/Demensions'
 
 
 
 
 const ConnectionAccount = (props) => {
   return (
-    <View style={styles.back}>
-    <View style={{marginVertical:30 , alignItems:'center'}}>
+    <SafeAreaView style={styles.back}>
+    <View style={{flex:0.2,paddingTop:adaptToHeight(0.03) ,alignItems:'center', justifyContent:'center'}}>
     <Text style={styles.text}>Aide-Mémoire</Text>
     </View>
     
  
-    <View style={{marginVertical:12 , alignItems:'center'}}><Ionicons name={"cloud-done-outline"}  style={{color:colors.black , justifyContent:'center' }} size={200}/>
-    <TouchableOpacity><Text onPress = {() => props.navigation.navigate('Pilulier1')}  style={{fontSize: 15,fontFamily:'Montserrat-Bold',fontWeight: 'bold',color:colors.white}}> Félicitations! Vous êtes connecté avec votre patient.Il est temps pour configurer le pilulier .</Text>
-                      <Text>Passer</Text>
+    <View style={{flex:0.5 , alignItems:'center'}}><Ionicons name={"cloud-done-outline"}  style={{color:'black' , justifyContent:'center' }} size={adaptToWidth(0.6)}/>
+    <TouchableOpacity style={{flex:0.4, alignItems:'center'}}><Text onPress = {() => props.navigation.navigate('Pilulier1')}  style={{fontSize: 15,fontFamily:'Montserrat-Bold',color:colors.black, width:adaptToWidth(0.75), textAlign:'center'}}> Félicitations! Vous êtes connecté avec votre patient.Il est temps pour configurer le pilulier .</Text>
+                      <Text style={{fontSize:15, fontFamily:'Roboto', paddingTop:adaptToHeight(0.009)}}>Passer</Text>
     </TouchableOpacity>
 
     </View>
-     </View>
+     </SafeAreaView>
     )}
 
  const styles = StyleSheet.create({
@@ -37,9 +38,8 @@ const ConnectionAccount = (props) => {
 
    } ,
    text: {
-    fontSize: 40,
+    fontSize: 48,
     
-    fontWeight: 'bold',
     letterSpacing: 0.25,
     fontFamily:'Lobster',
     color: colors.purple ,
@@ -49,8 +49,7 @@ const ConnectionAccount = (props) => {
    },
     back:{
       backgroundColor: colors.primary,
-      height:'100%',
-      width:'100%' 
+      flex:1
   
     },
     

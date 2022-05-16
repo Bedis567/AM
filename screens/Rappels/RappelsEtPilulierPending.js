@@ -7,7 +7,7 @@ import { adaptToWidth } from '../../config/Demensions'
 
 
 
-const RappelsEtPilulierPending = () => {
+const RappelsEtPilulierPending = (props) => {
   const [shouldShow, setShouldShow] = useState(false);
   const [shouldShow1, setShouldShow1] = useState(false);
 
@@ -19,10 +19,10 @@ const RappelsEtPilulierPending = () => {
       <Ionicons name={'notifications-circle-outline'} style={{color:colors.black}} size={60}/>
       <Text style={{fontFamily:'Montserrat-Bold'}}>En Attente</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={{alignItems:'center', opacity:0.6}}>
+      <TouchableOpacity style={{alignItems:'center', opacity:0.6}}  onPress = {() => props.navigation.navigate('RappelsEtPilulierOublie')}>
       <Ionicons name={'close-circle-outline'} style={{color:colors.black}} size={60}/>
       </TouchableOpacity>
-      <TouchableOpacity style={{alignItems:'center', opacity:0.6}}>
+      <TouchableOpacity style={{alignItems:'center', opacity:0.6}} onPress = {() => props.navigation.navigate('RappelsEtPilulierDone')}>
       <Ionicons name={'checkmark-circle-outline'} style={{color:colors.black}} size={60}/>
       </TouchableOpacity>
     </View>
@@ -112,3 +112,6 @@ fontSize:48,
 color:colors.black , flex:0.15, paddingTop:10},
 
 })
+
+
+

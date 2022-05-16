@@ -5,22 +5,22 @@ import Ionicons from "@expo/vector-icons/Ionicons"
 
 
 
-const RappelsEtPilulierOublie = () => {
+const RappelsEtPilulierOublie = (props) => {
   
 
   return (
     <SafeAreaView style={styles.container}>
     <Text style={styles.title}> Rappels et Pilules </Text>
     <View style={{flex:0.15, flexDirection:'row', justifyContent:'space-between',marginBottom:30, width:350, alignItems:'center'}}>
-    <TouchableOpacity style={{alignItems:'center', opacity:0.6}}>
+    <TouchableOpacity style={{alignItems:'center', opacity:0.6}} onPress = {() => props.navigation.navigate('RappelsEtPilulierPending')}>
       <Ionicons name={'notifications-circle-outline'} style={{color:colors.black}} size={60}/>
       
       </TouchableOpacity>
-      <TouchableOpacity style={{alignItems:'center' }}>
+      <TouchableOpacity style={{alignItems:'center' }} onPress = {() => props.navigation.navigate('RappelsEtPilulierOublie')}>
       <Ionicons name={'close-circle-outline'} style={{color:colors.black}} size={60}/>
       <Text style={{fontFamily:'Montserrat-Bold'}}>Manqué</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={{alignItems:'center', opacity:0.6}}>
+      <TouchableOpacity style={{alignItems:'center', opacity:0.6}} onPress = {() => props.navigation.navigate('RappelsEtPilulierDone')}>
       <Ionicons name={'checkmark-circle-outline'} style={{color:colors.black}} size={60}/>
       </TouchableOpacity>
     </View>
