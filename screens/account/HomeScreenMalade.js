@@ -33,7 +33,9 @@ const HomeScreenMalade = (props) => {
           <Text style={styles.text} >Jeux</Text></TouchableOpacity>
           </View>
                     <View style={{justifyContent:'space-around',alignItems:'center'}}> 
+
                     <TouchableOpacity style={{alignItems:'center', padding:adaptToHeight(0.04) }}  onPress = {() => props.navigation.navigate('NotificationsPending')}>
+
                       <Ionicons name={"notifications-circle"}
           style={{ color: colors.yesGreen}}
           size={adaptToWidth(0.25)} /><Text style={styles.text3}  numberOfLines={2}>Espace de notifications</Text>

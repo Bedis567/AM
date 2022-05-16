@@ -30,13 +30,19 @@ import RappelsEtPilulierDone from '../screens/Rappels/RappelsEtPilulierDone'
 import RappelsEtPilulierOublie from '../screens/Rappels/RappelsEtPilulierOublie'
 import RappelsEtPilulierPending from '../screens/Rappels/RappelsEtPilulierPending'
 import LoginScreenMalade from '../screens/account/LoginScreenMalade'
+
 import LoginScreenProche from '../screens/account/LoginScreenProche'
 import Localisation from '../screens/Localiser/Localisation'
+
 const Stack = createStackNavigator();
 
 const GuestStack = () => {
   return (
+
+
     <Stack.Navigator  initialRouteName={Route.WELCOME} >
+
+
      
       <Stack.Screen name={Route.REGISTER_MALADE} component={RegisterScreen} options={{headerShown:false}}/>
       <Stack.Screen name={Route.WELCOME} component={WelcomeScreen} options={{headerShown:false}}/>
@@ -66,8 +72,10 @@ const GuestStack = () => {
       <Stack.Screen name={Route.RAPPELSPILULIEROUBLIE} component={RappelsEtPilulierOublie} options={{headerShown:false}}/>
       <Stack.Screen name={Route.RAPPELSPILULIERPENDING} component={RappelsEtPilulierPending} options={{headerShown:false}}/>
       <Stack.Screen name={Route.LOGIN_MALADE} component={LoginScreenMalade} options={{headerShown:false}}/>
+
       <Stack.Screen name={Route.LOGIN_PROCHE} component={LoginScreenProche} options={{headerShown:false}}/>
       <Stack.Screen name={Route.LOCALISER} component={Localisation} options={{headerShown:false}}/>
+
     </Stack.Navigator>
   )
 }

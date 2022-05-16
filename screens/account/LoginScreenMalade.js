@@ -15,6 +15,7 @@ const LoginScreenMalade = (props) => {
        borderBottomColor:'black', borderBottomWidth:0.7, justifyContent:'flex-end'}}>
          
      <Image style={{width:adaptToWidth(0.5),height:adaptToHeight(0.23), marginTop:adaptToHeight(0.06), resizeMode:'stretch'}} 
+
      source={require('../../assets/logo.png')} />
       <Text style={{fontFamily:"Lobster", margin:adaptToHeight(0.01), fontSize:30, color:colors.purple}}>Aide-Mémoire</Text>
      <Text style={{fontFamily:"Lobster", margin:5, fontSize:15}}>Vos biens aimés, en pleine sécurité </Text>
