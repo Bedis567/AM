@@ -211,7 +211,7 @@ style={{padding:10}}
         </View>
         </View> 
         <TouchableOpacity style={{bottom:20, width:200, height:50, backgroundColor:colors.yesGreen, borderRadius:15, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white' ,marginTop:20}} 
-        onPress = {() => props.navigation.navigate('Scan_code')}>
+        onPress = {() => props.navigation.navigate('Code')}>
           <Text style={{color:'white', fontFamily:'Roboto-Bold', fontSize:20}}>Confirmer</Text></TouchableOpacity>
       <View style={{ width:100 , height:50}}><Text></Text></View>
          

@@ -78,7 +78,7 @@ const RegisterScreen = (props) => {
 
         </View>
         <TouchableOpacity style={{marginBottom:90, width:200, height:50, backgroundColor:colors.yesGreen, borderRadius:15, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white' ,marginTop:20}} 
-        onPress = {() => props.navigation.navigate('Code')}>
+        onPress = {() => props.navigation.navigate('Scan_code')}>
           <Text style={{color:'white', fontFamily:'Roboto-Bold', fontSize:20}}>Confirmer</Text></TouchableOpacity>
          
    </ScrollView>
