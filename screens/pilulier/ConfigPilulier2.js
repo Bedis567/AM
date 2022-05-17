@@ -3,7 +3,11 @@ import React ,{ useState }from 'react'
 import colors from '../../config/colors'
 import Ionicons from "@expo/vector-icons/Ionicons"
 
+<<<<<<< HEAD
 const ConfigPilulier2 = () => {
+=======
+const ConfigPilulier2 = (props) => {
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
   const [Semaine, setSemaine] = useState();
   const [Jour1,setJour1]=useState();
   const [numMois,setNumMois]=useState();
@@ -49,11 +53,19 @@ const ConfigPilulier2 = () => {
      <TouchableOpacity style={{color:colors.primary,width:96,height:100,borderColor:'black',borderWidth:1, alignItems:'center', justifyContent:'center'}}><Text style={{fontFamily:'Montserrat-Bold', fontSize:20}}>Soir</Text></TouchableOpacity>
      <TouchableOpacity style={{color:colors.primary,width:95,height:100,borderColor:'black',borderWidth:1,borderTopRightRadius:50,borderBottomRightRadius:50, alignItems:'center', justifyContent:'center'}}><Text style={{fontFamily:'Montserrat-Bold', fontSize:20}}>Nuit</Text></TouchableOpacity>
    </View>   
+<<<<<<< HEAD
    <View style={{width:'80%', borderColor:'black', borderWidth:2,flex:0.3, marginTop:10}}></View>
    <TouchableOpacity style={{flex:0.11,justifyContent:'flex-end'}} > 
           <View style={{flexDirection:'row',justifyContent:'center', alignItems:'center'}}>
       <Ionicons name={"add-circle-outline"} style={{ color: 'black', fontWeight:'300' }} size={60}/></View>
       <Text style={styles.text}>Ajouter un Traitement</Text>
+=======
+   <View style={{width:'80%', borderColor:'black', borderWidth:2,flex:0.3, marginTop:40}}></View>
+   <TouchableOpacity style={{flex:0.11,justifyContent:'flex-end' ,marginTop:40}} > 
+          <View style={{flexDirection:'row',justifyContent:'center', alignItems:'center' }}>
+      <Ionicons name={"add-circle-outline"} style={{ color: 'black', fontWeight:'300' }} size={60}/></View>
+      <Text style={styles.text} onPress = {() => props.navigation.navigate('Home_proche')}>Ajouter un Traitement</Text>
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
           </TouchableOpacity>
       
     </SafeAreaView>
@@ -77,7 +89,11 @@ title:{
   justifyContent:'flex-start'
 },
 titleContainer:{
+<<<<<<< HEAD
   top:45,
+=======
+  top:20,
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
       alignItems: "center",
       backgroundColor: colors.primary,
       flex:0.2

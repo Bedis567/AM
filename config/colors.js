@@ -26,6 +26,12 @@ export default {
     purple:'#8E0798',
     yesGreen:'#0DA307',
     purplelight:'#c683cb',
+<<<<<<< HEAD
 lightGrey: '#E1E1E1'
 
+=======
+lightGrey: '#E1E1E1',
+PastelYellow:'#FFF5BA',
+PastelOrange:'#FFABAB'
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
 }

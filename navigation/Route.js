@@ -3,6 +3,11 @@ export default Object.freeze({
     REGISTER_MALADE: 'Register_malade',
     WELCOME: 'Welcome',
     ROLE: 'Role',
+<<<<<<< HEAD
+=======
+    LOGIN_PROCHE:'Login_proche' ,
+    LOGIN_MALADE:'Login_malade' ,
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
     LOGIN2: 'Login2',
     PROBLEM: 'Problem',
     CONNECTION: 'Connection',
@@ -19,4 +24,19 @@ export default Object.freeze({
     PILULIER1:'Pilulier1' ,
     PILULIER3:'Pilulier3' ,
     PILULIER4:'Pilulier4' ,
+<<<<<<< HEAD
+=======
+    RAPPELS1: 'Rappels1' ,
+    RAPPELS2:'Rappels2',
+    RAPPELS3:'Rappels3',
+    
+    TEST:'Test',
+    NOTIFDONE:'NotificationsDone',
+    NOTIFOUBLIE:'NotificationsOublie',
+    NOTIFPENDING:'NotificationsPending',
+    RAPPELSPILULIERDONE:'RappelsEtPilulierDone',
+    RAPPELSPILULIEROUBLIE:'RappelsEtPilulierOublie',
+    RAPPELSPILULIERPENDING:'RappelsEtPilulierPending',
+    LOCALISER:'Localisation' ,
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
 }) 

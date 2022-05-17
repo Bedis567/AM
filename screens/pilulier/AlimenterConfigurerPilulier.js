@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import { StyleSheet, Text, View,SafeAreaView, TouchableOpacity} from 'react-native'
+=======
+import { StyleSheet, Text, View,SafeAreaView, TouchableOpacity , ScrollView} from 'react-native'
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
 import React ,{ useState }from 'react'
 import colors from '../../config/colors'
 import Ionicons from "@expo/vector-icons/Ionicons"
 
+<<<<<<< HEAD
 const AlimenterConfigurerPilulier = () => {
+=======
+const AlimenterConfigurerPilulier = (props) => {
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
   const [Semaine, setSemaine] = useState();
   const [Jour1,setJour1]=useState();
   const [numMois,setNumMois]=useState();
@@ -17,6 +25,10 @@ const AlimenterConfigurerPilulier = () => {
    
 <SafeAreaView style={styles.container}>
 <View style={styles.titleContainer}><Text style={styles.title}>Traitement et Pilulier</Text></View>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
 <View style={{justifyContent:'space-around', flexDirection:'row',flex:0.1 }}>
   <TouchableOpacity>
   <Ionicons name={"caret-back-outline"}
@@ -41,22 +53,42 @@ const AlimenterConfigurerPilulier = () => {
   <TouchableOpacity style={{borderWidth:1.5,width:45,height:45,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50, borderBottomRightRadius:50, margin:5, justifyContent:'center', alignItems:'center'}}><Text style={{fontFamily:'Roboto'}}>{Jour5}.{numMois}</Text></TouchableOpacity>
   <TouchableOpacity style={{borderWidth:1.5,width:45,height:45,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50, borderBottomRightRadius:50, margin:5, justifyContent:'center', alignItems:'center'}}><Text style={{fontFamily:'Roboto'}}>{Jour6}.{numMois}</Text></TouchableOpacity>
   <TouchableOpacity style={{borderWidth:1.5,width:45,height:45,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50, borderBottomRightRadius:50, margin:5, justifyContent:'center', alignItems:'center'}}><Text style={{fontFamily:'Roboto'}}>{Jour7}.{numMois}</Text></TouchableOpacity>
+<<<<<<< HEAD
 </View>
 <View style={{flex:0.08, alignItems:'flex-start', width:'90%'}}><Text style={{fontFamily:'Montserrat-Bold', fontSize:18}}>Compartiments:</Text></View>
+=======
+</View> 
+<View style={{flex:0.05}}></View>
+<View style={{flex:0.08, alignItems:'flex-start', width:'90%'}}><Text style={{fontFamily:'Montserrat-Bold', fontSize:18}}>Compartiments:</Text></View>
+<View style={{flex:0.05}}></View>
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
 <View style={{flexDirection:'row', flex:0.15, justifyContent: 'center', alignContent:'center'}}>
      <TouchableOpacity style={{color:colors.primary,width:95,height:100,borderColor:'black',borderWidth:1,borderTopLeftRadius:50,borderBottomLeftRadius:50, alignItems:'center', justifyContent:'center'}}><Text style={{fontFamily:'Montserrat-Bold', fontSize:20}}>Matin</Text></TouchableOpacity>
      <TouchableOpacity style={{color:colors.primary,width:95,height:100,borderColor:'black',borderWidth:1, alignItems:'center', justifyContent:'center'}}><Text style={{fontFamily:'Montserrat-Bold', fontSize:20}}>Midi</Text></TouchableOpacity>
      <TouchableOpacity style={{color:colors.primary,width:96,height:100,borderColor:'black',borderWidth:1, alignItems:'center', justifyContent:'center'}}><Text style={{fontFamily:'Montserrat-Bold', fontSize:20}}>Soir</Text></TouchableOpacity>
      <TouchableOpacity style={{color:colors.primary,width:95,height:100,borderColor:'black',borderWidth:1,borderTopRightRadius:50,borderBottomRightRadius:50, alignItems:'center', justifyContent:'center'}}><Text style={{fontFamily:'Montserrat-Bold', fontSize:20}}>Nuit</Text></TouchableOpacity>
    </View>   
+<<<<<<< HEAD
    <View style={{width:'80%', borderColor:'black', borderWidth:2,flex:0.3, marginTop:30}}></View>
+=======
+   <View style={{flex:0.1}}></View>
+   <View style={{width:'80%', borderColor:'black', borderWidth:2,flex:0.3, marginTop:30}}></View>
+   <View style={{flex:0.05}}></View>
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
    <View style={{alignItems:'center', justifyContent:'flex-start', flexDirection:'row',marginTop:10}}>
       <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:100, marginRight:30}} > 
       <Ionicons name={"add-circle-outline"} style={{ color: 'black', fontWeight:'300' }} size={60}/>
       <Text style={styles.text}>Ajouter un Traitement</Text>
           </TouchableOpacity>
+<<<<<<< HEAD
           <TouchableOpacity style={{width:150,height:70, backgroundColor:colors.yesGreen, borderRadius:50, justifyContent:'center', alignItems:'center',  marginLeft:30}}><Text style={{fontFamily:'Roboto-Bold', color:'white', fontSize:20, textAlign:'center'}}>Alimenter Pilulier</Text></TouchableOpacity>
           </View> 
+=======
+          <TouchableOpacity style={{width:150,height:70, backgroundColor:colors.yesGreen, borderRadius:50, justifyContent:'center', alignItems:'center',  marginLeft:30}}><Text style={{fontFamily:'Roboto-Bold', color:'white', fontSize:20, textAlign:'center'}}
+           onPress = {() => props.navigation.navigate('Home_proche')}>Alimenter Pilulier</Text></TouchableOpacity>
+          </View> 
+   
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
     </SafeAreaView>
   );
 };
@@ -78,7 +110,11 @@ title:{
     justifyContent:'flex-start'
 },
 titleContainer:{
+<<<<<<< HEAD
     top:45,
+=======
+        top:20,
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
         alignItems: "center",
         backgroundColor: colors.primary,
         flex:0.2

@@ -95,7 +95,11 @@ text: {
   
   fontWeight: 'bold',
   letterSpacing: 0.25,
+<<<<<<< HEAD
   fontFamily:'lobster',
+=======
+  fontFamily:'Lobster',
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
   color: colors.purple ,
   alignItems : 'center' ,
     justifyContent: 'flex-start',

@@ -10,10 +10,18 @@ const WelcomeScreen = (props) => {
    
        <View style={styles.container}>
        
+<<<<<<< HEAD
       <Image style={{margin:10 ,width:'67.5%',height:'37.5%' ,justifyContent:'center',alignItems:'center'} }
       source={require('../../assets/logo.png')} />
       <View ><Text style={styles.textStyle}>Aide-Mémoire</Text></View> 
     <TouchableOpacity style={{margin:20 ,left:5,top:50 ,width:'50%', height:'7%', backgroundColor:colors.yesGreen, borderRadius:15, marginTop:30, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white'}} onPress = {() => props.navigation.navigate('Role')}>
+=======
+      <Image style={{margin:10 ,width:'75.5%',height:'37.5%' ,justifyContent:'center',alignItems:'center'} }
+      source={require('../../assets/logo.png')} />
+      <View ><Text style={styles.textStyle}>Aide-Mémoire</Text></View> 
+    <TouchableOpacity style={{margin:20 ,left:5,top:50 ,width:'50%', height:'7%', backgroundColor:colors.yesGreen, borderRadius:15, marginTop:30, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white'}}
+     onPress = {() => props.navigation.navigate('Role')}>
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
            <Text  style={{fontSize: 15,fontFamily:'Montserrat-Bold',fontWeight: 'bold',color:colors.white}}>COMMENCER</Text>
                     </TouchableOpacity>
       <StatusBar style="auto" />
@@ -60,7 +68,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize:48,
         color: colors.purple ,
+<<<<<<< HEAD
         fontFamily:'lobster',
+=======
+        fontFamily:'Lobster',
+>>>>>>> ccee34fc7c5dd6dd902d425f23221ec8acee645e
         margin:10,
         justifyContent:'flex-start',}
       
