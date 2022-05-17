@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    profile: {},
+    profile: {}
   };
   
   export default function ProfileReducer(state = INITIAL_STATE, action) {

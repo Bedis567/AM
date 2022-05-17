@@ -1,5 +1,22 @@
 export default Object.freeze({
-    LOGIN:'Login',
-    REGISTER : 'Register',
-    WELCOME: "Welcome"
-})
+  
+    REGISTER_MALADE: 'Register_malade',
+    WELCOME: 'Welcome',
+    ROLE: 'Role',
+    LOGIN2: 'Login2',
+    PROBLEM: 'Problem',
+    CONNECTION: 'Connection',
+    CODE:'Code',
+    PILULIER2:'Pilulier2 ,',
+    HOME_PROCHE: 'Home_proche',
+    HOME_MALADE: 'Home_malade',
+    REGISTER_PROCHE: 'Register_proche',
+    URGENCE1: 'Urgence1' ,
+    URGENCE2: 'Urgence2'  ,
+    URGENCE3 : 'Urgence3' ,
+    URGENCE4 : 'Urgence4' ,
+    SCAN: 'Scan_code',
+    PILULIER1:'Pilulier1' ,
+    PILULIER3:'Pilulier3' ,
+    PILULIER4:'Pilulier4' ,
+}) 

@@ -9,6 +9,4 @@ const AppText = () => {
   )
 }
 
-export default AppText
-
-const styles = StyleSheet.create({})
+export default AppText 

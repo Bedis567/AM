@@ -1,14 +1,23 @@
-
-import 'react-native-gesture-handler';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import {useState} from "react"
 import {Provider} from "react-redux"
 import AppContainer from './AppContainer';
 import AuthContext from './context/AuthContext';
 import store from './redux/store/store';
 
+import {useFonts} from 'expo-font';
+import AppLoading from "expo-app-loading";
+
 export default function App() {
- const [user,setUser] = useState(null)
+const [user,setUser] = useState(null)
+let [fontsLoaded] = useFonts({
+      'lobster': require('./assets/fonts/Lobster/Lobster-Regular.ttf'),
+      'Montserrat': require('./assets/fonts/Montserrat/Montserrat-Bold.ttf'),
+      'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
+    });
+    if (!fontsLoaded) {
+        return <AppLoading/>;
+    }
   return (
     <AuthContext.Provider  value={{user, setUser}} >
       <Provider  store={store()} >
@@ -26,4 +35,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
