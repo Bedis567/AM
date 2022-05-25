@@ -12,7 +12,7 @@ const HomeScreenMalade = (props) => {
     <SafeAreaView style={styles.container} >
    <TouchableOpacity style={{ paddingVertical:adaptToHeight(0.025), paddingHorizontal:adaptToWidth(0.025)}}
     onPress = {() => props.navigation.navigate('Urgence1')}> 
-     <Image style={{width:adaptToWidth(0.28),height:adaptToHeight(0.2)}}  
+     <Image style={{width:adaptToWidth(0.28),height:adaptToHeight(0.2), resizeMode:'contain'}}  
       source={require('../../assets/urgencelogo.png')} />
       
       </TouchableOpacity>
@@ -26,14 +26,15 @@ const HomeScreenMalade = (props) => {
           size={adaptToWidth(0.25)} />
           <Text style={styles.text}>Memories</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{alignItems:'center', padding:adaptToHeight(0.04)}}>
+          <TouchableOpacity style={{alignItems:'center', padding:adaptToHeight(0.04)}} onPress ={()=>props.navigation.navigate('Jeu1')}>
             <Ionicons name={"game-controller"}
           style={{ color: colors.blue }}
           size={adaptToWidth(0.25)} />
           <Text style={styles.text} >Jeux</Text></TouchableOpacity>
           </View>
                     <View style={{justifyContent:'space-around',alignItems:'center'}}> 
-                    <TouchableOpacity style={{alignItems:'center', padding:adaptToHeight(0.04)}}>
+                    <TouchableOpacity style={{alignItems:'center', padding:adaptToHeight(0.04)}}
+                     onPress = {() => props.navigation.navigate('NotificationsPending')}>
                       <Ionicons name={"notifications-circle"}
           style={{ color: colors.yesGreen}}
           size={adaptToWidth(0.25)} /><Text style={styles.text3}  numberOfLines={2}>Espace de notifications</Text>
@@ -62,7 +63,7 @@ title:{
     fontSize:48,
     color:colors.purple },
 titleContainer:{
-  flex:0.3,
+  flex:0.5,
         alignItems: "center",
         backgroundColor: colors.primary,
         

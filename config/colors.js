@@ -5,7 +5,7 @@ export default {
     black: '#242A37',
     white: '#fff',
     grey: '#707070',
-   
+    greyDark:'#586261',
     greyLighter: '#dddddd',
     greyMedium: '#a5a5a5',
     pinkLight: '#f9ded4',
@@ -28,5 +28,6 @@ export default {
     purplelight:'#c683cb',
 lightGrey: '#E1E1E1',
 PastelYellow:'#FFF5BA',
-PastelOrange:'#FFABAB'
+PastelOrange:'#FFABAB',
+pastelLightPink:'#FCE2EF',
 }

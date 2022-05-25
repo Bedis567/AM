@@ -8,7 +8,6 @@ import LoginScreen2 from '../screens/account/LoginScreen2'
 import ConnectionAccount from '../screens/account/ConnectionAccount'
 import CodeMalade from '../screens/account/CodeMalade'
 import DeclareProblem from '../screens/Problem/DeclareProblem'
-
 import Register_proche from '../screens/account/Register_proche'
 import HomeScreenProche from '../screens/account/HomeScreenProche'
 import HomeScreenMalade from '../screens/account/HomeScreenMalade'
@@ -21,6 +20,7 @@ import ChoixPilulier from '../screens/pilulier/ChoixPilulier'
 import ConfigPilulier2 from '../screens/pilulier/ConfigPilulier2'
 import AlimenterConfigurerPilulier from '../screens/pilulier/AlimenterConfigurerPilulier'
 import ConfigRappelsUtiles from '../screens/Rappels/ConfigRappelsUtiles'
+import RappelsUtiles from '../screens/Rappels/RappelsUtiles'
 import Test from '../Test'
 import NotificationsOublie from '../screens/Notifications/NotificationsOublie'
 import NotificationsDone from '../screens/Notifications/NotificationsDone'
@@ -29,11 +29,33 @@ import RappelsEtPilulierDone from '../screens/Rappels/RappelsEtPilulierDone'
 import RappelsEtPilulierOublie from '../screens/Rappels/RappelsEtPilulierOublie'
 import RappelsEtPilulierPending from '../screens/Rappels/RappelsEtPilulierPending'
 import LoginScreenMalade from '../screens/account/LoginScreenMalade'
+import LoginScreenProche from '../screens/account/LoginScreenProche'
+import Localisation from '../screens/Localisation/Localisation'
+import InfoAdd from '../screens/account/InfoAdd'
+import GP1 from '../screens/Gestion_profil/GP1'
+import GP2 from '../screens/Gestion_profil/GP2'
+import AjoutTraitement from '../screens/pilulier/AjoutTraitement'
+import ConfigJeux from '../screens/jeux/ConfigJeux'
+import TraitementConfig1 from '../screens/pilulier/TraitementConfig1'
+import Jeu1 from '../screens/jeux/Jeu1'
+import Jeu3 from '../screens/jeux/Jeu3'
+import Jeu2 from '../screens/jeux/Jeu2'
+import Jeu4 from '../screens/jeux/Jeu4'
+import Memo from '../screens/memories/Memo' 
+
+import List from '../screens/Diary/List'
+import Edit from '../screens/Diary/Edit'
+import DiaryScreen from '../screens/Diary/DiaryScreen'
+import Jeu5 from '../screens/jeux/Jeu5'
 const Stack = createStackNavigator();
 
 const GuestStack = () => {
   return (
-    <Stack.Navigator  initialRouteName={Route.ROLE} >
+
+
+    <Stack.Navigator  initialRouteName={Route.JEU1} >
+
+
      
       <Stack.Screen name={Route.REGISTER_MALADE} component={RegisterScreen} options={{headerShown:false}}/>
       <Stack.Screen name={Route.WELCOME} component={WelcomeScreen} options={{headerShown:false}}/>
@@ -54,6 +76,7 @@ const GuestStack = () => {
       <Stack.Screen name={Route.PILULIER4} component={ConfigPilulier2} options={{headerShown:false}}/>
       <Stack.Screen name={Route.PILULIER3} component={AlimenterConfigurerPilulier} options={{headerShown:false}} />
       <Stack.Screen name={Route.RAPPELS1} component={ConfigRappelsUtiles} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.RAPPELS3} component={RappelsUtiles} options={{headerShown:false}}/>
       <Stack.Screen name={Route.TEST} component={Test} options={{headerShown:false}}/>
       <Stack.Screen name={Route.NOTIFOUBLIE} component={NotificationsOublie} options={{headerShown:false}}/>
       <Stack.Screen name={Route.NOTIFDONE} component={NotificationsDone} options={{headerShown:false}}/>
@@ -62,7 +85,25 @@ const GuestStack = () => {
       <Stack.Screen name={Route.RAPPELSPILULIEROUBLIE} component={RappelsEtPilulierOublie} options={{headerShown:false}}/>
       <Stack.Screen name={Route.RAPPELSPILULIERPENDING} component={RappelsEtPilulierPending} options={{headerShown:false}}/>
       <Stack.Screen name={Route.LOGIN_MALADE} component={LoginScreenMalade} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.INFOADD} component={InfoAdd} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.LOGIN_PROCHE} component={LoginScreenProche} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.LOCALISER} component={Localisation} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.GP1} component={GP1} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.GP2} component={GP2} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.AJOUTTRAITEMENT} component={AjoutTraitement} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.GAMECONFIG} component={ConfigJeux} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.PILULIERCONFIG1} component={TraitementConfig1} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.JEU1} component={Jeu1} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.JEU2} component={Jeu2} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.JEU3} component={Jeu3} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.JEU4} component={Jeu4} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.JEU5} component={Jeu5} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.MEMO} component={Memo} options={{headerShown:false}}/>
+      <Stack.Screen name={Route.LIST} component={List} options={{headerShown:true}}/>
+      <Stack.Screen name={Route.EDIT} component={Edit} options={{headerShown:true }}/>
+      <Stack.Screen name={Route.DIARY} component={DiaryScreen} options={{headerShown:false }}/>
     </Stack.Navigator>
+
   )
 }
 

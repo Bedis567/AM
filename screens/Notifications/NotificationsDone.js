@@ -1,50 +1,57 @@
-import { StyleSheet, Text, View,TouchableOpacity,ScrollView, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity,ScrollView, SafeAreaView,StatusBar } from 'react-native'
 import React,{useState} from 'react'
 import colors from '../../config/colors'
 import Ionicons from "@expo/vector-icons/Ionicons"
+import { adaptToHeight, adaptToWidth, width } from '../../config/Demensions'
+import FloatingButton from '../../components/FloatingButton'
 
 
-
-const NotificationsDone = () => {
+const NotificationsDone = (props) => {
  
 
   return (
     <SafeAreaView style={styles.container}>
-    <View style={{alignItems:'flex-start', flex:0.15,width:'95%', justifyContent:'center', marginTop:30}}><Text style={styles.title}> Notifications </Text></View>
-    <View style={{flex:0.15, flexDirection:'row', justifyContent:'space-between',marginBottom:30, width:350, alignItems:'center'}}>
-    <TouchableOpacity style={{alignItems:'center', opacity:0.6}}>
-      <Ionicons name={'notifications-circle-outline'} style={{color:colors.black}} size={60} />
+      <FloatingButton navigation={props.navigation} />
+    <View style={{alignItems:'flex-start', flex:0.15,width:adaptToWidth(0.9), justifyContent:'center', paddingTop:adaptToHeight(0.04)}}>
+      <Text style={styles.title}> Notifications </Text>
+      
+      </View>
+    <View style={{flex:0.15, flexDirection:'row', justifyContent:'space-between', width:adaptToWidth(0.9), alignItems:'flex-start'}}>
+    <TouchableOpacity style={{alignItems:'center', opacity:0.6}}  onPress = {() => props.navigation.navigate('NotificationsPending')}>
+      <Ionicons name={'notifications-circle-outline'} style={{color:colors.black}} size={adaptToHeight(0.08)} />
       
       </TouchableOpacity>
-      <TouchableOpacity style={{alignItems:'center', opacity:0.6}}>
-      <Ionicons name={'close-circle-outline'} style={{color:colors.black}} size={60}/>
+      <TouchableOpacity style={{alignItems:'center', opacity:0.6}} onPress = {() => props.navigation.navigate('NotificationsOublie')}>
+      <Ionicons name={'close-circle-outline'} style={{color:colors.black}} size={adaptToHeight(0.08)}/>
       </TouchableOpacity>
-      <TouchableOpacity style={{alignItems:'center'}}>
-      <Ionicons name={'checkmark-circle-outline'} style={{color:colors.black}} size={60}/>
+      <TouchableOpacity style={{alignItems:'center'}} onPress = {() => props.navigation.navigate('NotificationsDone')}>
+      <Ionicons name={'checkmark-circle-outline'} style={{color:colors.black}} size={adaptToHeight(0.08)}/>
       <Text style={{fontFamily:'Montserrat-Bold'}}>Fait</Text>
       </TouchableOpacity>
     </View>
-    <View style={{ flex:0.5, width:'100%', padding: 30,alignItems:'center'}} >
-   <ScrollView style={{width:'100%'}}>
+
+    
+    <View style={{ flex:0.5, padding: adaptToHeight(0.04),alignItems:'center'}} >
+   <ScrollView style={{width:adaptToWidth(0.9)}}>
    <TouchableOpacity style={{backgroundColor:colors.violetPastel,flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column'}}>
-     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', width:350, height:50}}>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>time</Text>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>description</Text>
+     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', width:adaptToWidth(0.9), height:adaptToHeight(0.065)}}>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>time</Text>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>description</Text>
        </View>
    </TouchableOpacity>
 
 
-   <TouchableOpacity style={{backgroundColor:colors.PastelYellow,flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column', marginTop:30}} >
-     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', width:350, height:50}}>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>time</Text>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>description</Text>
+   <TouchableOpacity style={{backgroundColor:colors.PastelYellow,flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column', marginTop:adaptToHeight(0.04)}} >
+     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', width:adaptToWidth(0.9), height:adaptToHeight(0.065)}}>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>time</Text>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>description</Text>
        </View>
        
    </TouchableOpacity>
-   <TouchableOpacity style={{backgroundColor:colors.PastelOrange,flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column', marginTop:30}} >
-     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', width:350, height:50}}>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>time</Text>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>Pillule</Text>
+   <TouchableOpacity style={{backgroundColor:colors.PastelOrange,flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column', marginTop:adaptToHeight(0.04)}} >
+     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', width:adaptToWidth(0.9), height:adaptToHeight(0.065)}}>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>time</Text>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>Pillule</Text>
        </View>
        
         </TouchableOpacity>
@@ -60,9 +67,12 @@ const NotificationsDone = () => {
 export default NotificationsDone
 
 const styles = StyleSheet.create({ 
-  container: {
-  alignItems: "center",
-  backgroundColor: colors.primary, flex:1
+  
+    container:{
+      paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 ,
+      alignItems: "center",
+      backgroundColor: colors.primary,
+      flex:1
 },
 title:{
 alignItems:'flex-start',

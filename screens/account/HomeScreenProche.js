@@ -12,13 +12,14 @@ const HomeScreenProche = (props) => {
         <View style={styles.titleContainer}><Text style={styles.title}> Aide-Mémoire </Text></View>
         <View style={{flex:0.2, flexDirection:'row',justifyContent:'center'}}>
         <TouchableOpacity style={{alignItems:'center', margin:adaptToWidth(0.045), marginRight:adaptToWidth(0.095)}} 
-        onPress = {() => props.navigation.navigate('Rappels1')}>
+        onPress = {() => props.navigation.navigate('Rappels3')}>
           <Ionicons name={"alarm-outline"}
           style={{ color: colors.black }}
           size={adaptToHeight(0.08)} />
           <Text style={styles.text}>Mes Rappels</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{alignItems:'center', margin:adaptToWidth(0.045)}}><Ionicons name={"locate-outline"}
+          <TouchableOpacity style={{alignItems:'center', margin:adaptToWidth(0.045)}} onPress = {() => props.navigation.navigate('Localisation')} >
+            <Ionicons name={"locate-outline"}
           style={{ color: colors.black }}
           size={adaptToHeight(0.08)} /><Text style={{marginVertical:adaptToHeight(0.02),
             fontFamily:'Montserrat',
@@ -32,7 +33,7 @@ const HomeScreenProche = (props) => {
           style={{ color: colors.black }}
           size={adaptToHeight(0.08)} /><Ionicons name={"add-circle-outline"} style={{ color: colors.black, fontWeight:'300' }} size={adaptToHeight(0.025)}/></View>
           <Text style={styles.text}>Ajouter un Jeu</Text></TouchableOpacity>
-          <TouchableOpacity style={{alignItems:'center',marginVertical:adaptToHeight(0.03), marginLeft:adaptToWidth(0.06), marginRight:adaptToWidth(0.15)}}>
+          <TouchableOpacity style={{alignItems:'center',marginVertical:adaptToHeight(0.03), marginLeft:adaptToWidth(0.06), marginRight:adaptToWidth(0.15)}} onPress = {() => props.navigation.navigate('RappelsEtPilulierPending')}>
             <Ionicons name={"notifications-circle-outline"}
           style={{ color: colors.black }}
           size={adaptToHeight(0.08)} /><Text style={styles.text}>Rappels Malade</Text></TouchableOpacity>
@@ -51,7 +52,7 @@ const HomeScreenProche = (props) => {
           </View>
           <View style={{flex:0.3, flexDirection:'row',justifyContent:'center'}}>
           <TouchableOpacity 
-          style={{alignItems:'center',marginTop:adaptToHeight(0.062),left:-adaptToWidth(0.05),marginRight:adaptToWidth(0.15)}}>
+          style={{alignItems:'center',marginTop:adaptToHeight(0.062),left:-adaptToWidth(0.05),marginRight:adaptToWidth(0.15)}} onPress = {() => props.navigation.navigate('Problem')}>
             <Ionicons name={'warning-outline'} style={{color:colors.black}} size={adaptToHeight(0.08)}/>
           <Text style={{marginVertical:adaptToHeight(0.02),
             fontFamily:'Montserrat',

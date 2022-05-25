@@ -7,45 +7,49 @@ import Display from '../../components/Display'
 import {Picker} from '@react-native-picker/picker';
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import Ionicons from "@expo/vector-icons/Ionicons";
-
+import { adaptToHeight,adaptToWidth } from '../../config/Demensions'
+import PhoneInput from '../../components/PhoneInput'
   
 const Register_proche = (props) => {
     const [selectedDay, setSelectedDay] = useState();
     const [selectedMonth, setSelectedMonth] = useState();
     const [selectedYear, setSelectedYear] = useState();
   return (
-    <SafeAreaView  style={{ alignItems:'center', flex:1}}>
-    <View style={{height:'100%', width:'100%',flexDirection:'column', flex:1}}>
-    <View style={{width: "100%",
-       height: "45%",
+    <SafeAreaView style={{flexDirection:'column', flex:1}}>
+    <View style={{flex:0.4,
        alignItems: "center",
        backgroundColor: colors.primary,
-       borderBottomColor:'black', borderBottomWidth:0.7}}>
-     <Image style={{width:"45%",height:"52%", top:30 }} 
+       borderBottomColor:'black', borderBottomWidth:0.7, justifyContent:'flex-end'}}>
+         
+     <Image style={{width:adaptToWidth(0.5),height:adaptToHeight(0.23), marginTop:adaptToHeight(0.06), resizeMode:'stretch'}} 
      source={require('../../assets/logo.png')} />
-      <Text style={{fontFamily:"Lobster", margin:5, fontSize:30, top:40 , color:colors.purple}}>Aide-Mémoire</Text>
-     <Text style={{fontFamily:"Lobster", margin:5, fontSize:15, top:40}}>Vos biens aimés, en pleine sécurité </Text>
+      <Text style={{fontFamily:"Lobster",padding:adaptToHeight(0.01), fontSize:30, color:colors.purple}}>Aide-Mémoire</Text>
+     <Text style={{fontFamily:"Lobster", padding:adaptToHeight(0.01), fontSize:15}}>Vos biens aimés, en pleine sécurité </Text>
     
-     <View style={{width:'100%', height:30, flexDirection:'row', top:50, justifyContent:'space-around'}}>
+     <View style={{ width:adaptToWidth(0.9),flexDirection:'row', justifyContent:'space-around'}}>
          <TouchableOpacity style={{alignItems:'center'}}>
-         <Text style={{fontFamily:'Montserrat-Bold',fontSize:17 , color:colors.purple}}>S'inscrire</Text>
+         <Text style={{fontFamily:'Montserrat-Bold',fontSize:17, color:colors.purple }} 
+         >S'inscrire</Text>
          </TouchableOpacity>
          <TouchableOpacity style={{alignItems:'center'}}>
-             <Text style={{fontFamily:'Montserrat-Bold', fontSize:17}} onPress = {() => props.navigation.navigate('Login_proche')}>Se connecter</Text> 
+             <Text style={{fontFamily:'Montserrat-Bold', fontSize:17 , color:colors.black}} onPress = {() => props.navigation.navigate('Login_proche')} >Se connecter</Text> 
          </TouchableOpacity>
          </View>
          </View>
-         <View style={{justifyContent:'flex-start', alignItems:'center', width:'100%', height:'60%', top: 30}}>
-         <ScrollView style={{flex:0.65}} contentContainerStyle={{alignItems:'center'}}  > 
-             <Text style={{fontFamily:'Roboto', fontSize:20, color:'black'}}>Veuillez entrer vos informations:</Text>
+
+
+         <View style={{justifyContent:'flex-start', alignItems:'center',flex:0.55}}>
+         <ScrollView  contentContainerStyle={{alignItems:'center'}}  > 
+             <Text style={{fontFamily:'Roboto-Bold', fontSize:20, color:'black', paddingTop:adaptToHeight(0.02)}}>Veuillez entrer vos informations:</Text>
     
      <Input icon="md-person" placeholder="Nom Complet" />
           <Input icon="md-mail" placeholder="Email" />
           <Input icon="lock-closed-outline" placeholder="Mot de passe"/>
-          <Input icon="lock-closed" placeholder="Confirmer le mot de passe" />
+          <Input icon="lock-closed" placeholder="Confirmer le mot de passe"  />
           <Display icon="md-location" label="localisation"/>
+          <PhoneInput icon="call" placeholder="Numéro de téléphone"  />
           
-         <View><Text style={styles.textStyle3}>Date de naissance</Text><View style={{backgroundColor:"#ddd", borderRadius:12, marginVertical:14}}>
+         <View><Text style={styles.textStyle3}>Date de naissance</Text><View style={{backgroundColor:"#ddd", borderRadius:12, marginVertical:adaptToHeight(0.05)}}>
            
            <Picker 
   selectedValue={selectedDay}
@@ -88,7 +92,7 @@ const Register_proche = (props) => {
 </Picker>
 
 <Picker 
-style={{padding:10}}
+style={{padding:adaptToHeight(0.05)}}
   selectedValue={selectedMonth}
   onValueChange={(itemValue, itemIndex) =>
     setSelectedMonth(itemValue)}
@@ -188,18 +192,20 @@ style={{padding:10}}
 
 </View>
        <Text style={styles.textStyle3}>Attachez une photo du Patient </Text>
-          <View style={{alignItems:'center', marginVertical:30}}><TouchableOpacity style={{width:200,height:200, backgroundColor:'white', alignItems:'center', justifyContent:'center'}}>
+          <View style={{alignItems:'center', marginVertical:adaptToHeight(0.06)}}>
+            <TouchableOpacity 
+            style={{width:adaptToWidth(0.55),height:adaptToHeight(0.25), backgroundColor:'white', alignItems:'center', justifyContent:'center'}}>
               <Ionicons
           name="add-outline"
           style={{color:colors.grey}}
-          size={150}
+          size={adaptToHeight(0.2)}
         /> 
         </TouchableOpacity></View>
-        <View style={{bottom:20}}>
+        <View style={{padding:adaptToHeight(0.01)}}>
         <BouncyCheckbox
-  size={15}
+  size={adaptToHeight(0.02)}
   fillColor='#8E0798'
-  unfillColor="#f7f2e2"
+  unfillColor='white'
   text="J'accepte les termes et les conditions d'utilisation"
   iconStyle={{ borderColor: colors.purple  }}
   textStyle={{ fontFamily: "Roboto", textDecorationLine: "none", fontSize:15  }}
@@ -210,14 +216,14 @@ style={{padding:10}}
 
         </View>
         </View> 
-        <TouchableOpacity style={{bottom:20, width:200, height:50, backgroundColor:colors.yesGreen, borderRadius:15, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white' ,marginTop:20}} 
-        onPress = {() => props.navigation.navigate('Scan_code')}>
+        <TouchableOpacity style={{marginBottom:adaptToHeight(0.08), width:adaptToWidth(0.5), height:adaptToHeight(0.06), backgroundColor:colors.yesGreen, borderRadius:15, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white' ,marginTop:adaptToHeight(0.03)}} 
+        onPress = {() => props.navigation.navigate('Code')}>
           <Text style={{color:'white', fontFamily:'Roboto-Bold', fontSize:20}}>Confirmer</Text></TouchableOpacity>
-      <View style={{ width:100 , height:50}}><Text></Text></View>
+      
          
    </ScrollView>
    
-  </View></View>
+  </View>
   </SafeAreaView>
   )
 }
@@ -226,50 +232,13 @@ style={{padding:10}}
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    height: "100%",
+   
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.primary,
     flex:1
     
   },
-  input:{
-    borderWidth: 3,
-    width:300,
-    height:40,
-    padding:10,
-    borderColor:"black"
-  },
-inputContainer:{
-  
-alignItems:'center',
-top:60
-
-},
-
-textStyle:{
-  fontSize: 40,
-  
-  fontWeight: 'bold',
-  letterSpacing: 0.25,
-  fontFamily:'Lobster',
-  color: colors.purple ,
-  alignItems : 'center' ,
-    justifyContent: 'flex-start',
-   
-
-
-},
-textStyle2:{
-  fontSize:25,
-  letterSpacing: 0.25,
-  fontFamily:'Montserrat',
-  color: colors.black ,
-  alignItems : 'center' ,
-  justifyContent: 'center' ,
-  textAlign:'center'
-},
 textStyle3:{
   textAlign:'center',
   fontSize:20,
@@ -278,23 +247,5 @@ textStyle3:{
   
 },
 
-container1: {
-  flex: 1,
-  paddingTop: 40,
-  alignItems: "center"
-},
-container2: {
-  flexDirection: "row",
-  width: "100%",
-  justifyContent: "center",
-  alignItems: "center",
-  backgroundColor: "#ddd",
-  width: 8 / 1.2,
-  borderRadius: 15,
-  marginVertical: 10,
-},
-Container3: {
-    alignItems:'center'
-}
 })
   export default Register_proche

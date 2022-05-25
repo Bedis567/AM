@@ -2,38 +2,45 @@ import { StyleSheet, Text, View,TouchableOpacity,ScrollView, SafeAreaView,Status
 import React,{useState} from 'react'
 import colors from '../../config/colors'
 import Ionicons from "@expo/vector-icons/Ionicons"
-
-
-const NotificationsPending = () => {
+import { adaptToHeight,adaptToWidth } from '../../config/Demensions'
+import FloatingButton from '../../components/FloatingButton'
+const NotificationsPending = (props) => {
   const [shouldShow, setShouldShow] = useState(false);
   const [shouldShow1, setShouldShow1] = useState(false);
   const [shouldShow2, setShouldShow2] =useState(false);
 
   return (<SafeAreaView style={styles.container}>
-    <View style={{alignItems:'flex-start', flex:0.15,width:'95%', justifyContent:'center', marginTop:30}}>
+    <FloatingButton navigation={props.navigation} />
+    <View style={{alignItems:'flex-start', flex:0.15,width:adaptToWidth(0.9), justifyContent:'center', marginTop:adaptToHeight(0.04)}}>
       <Text style={styles.title}> Notifications </Text></View>
-  <View style={{flex:0.15, flexDirection:'row', justifyContent:'space-between',marginBottom:10, width:350, alignItems:'center'}}>
-  <TouchableOpacity style={{alignItems:'center'}}>
-      <Ionicons name={'notifications-circle-outline'} style={{color:colors.black}} size={60}/>
+  <View style={{flex:0.15, flexDirection:'row', justifyContent:'space-between',width:adaptToWidth(0.9), alignItems:'center'}}>
+  <TouchableOpacity style={{alignItems:'center'}}  onPress = {() => props.navigation.navigate('NotificationsPending')}>
+      <Ionicons name={'notifications-circle-outline'} style={{color:colors.black}} size={adaptToHeight(0.08)}/>
       <Text style={{fontFamily:'Montserrat-Bold'}}>En Attente</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={{alignItems:'center', opacity:0.6}}>
-      <Ionicons name={'close-circle-outline'} style={{color:colors.black}} size={60}/>
+      <TouchableOpacity style={{alignItems:'center', opacity:0.6}} onPress = {() => props.navigation.navigate('NotificationsOublie')}>
+      <Ionicons name={'close-circle-outline'} style={{color:colors.black}} size={adaptToHeight(0.08)}/>
       </TouchableOpacity>
-      <TouchableOpacity style={{alignItems:'center', opacity:0.6}}>
-      <Ionicons name={'checkmark-circle-outline'} style={{color:colors.black}} size={60}/>
+      <TouchableOpacity style={{alignItems:'center', opacity:0.6}} onPress = {() => props.navigation.navigate('NotificationsDone')}>
+      <Ionicons name={'checkmark-circle-outline'} style={{color:colors.black}} size={adaptToHeight(0.08)}/>
       </TouchableOpacity>
   </View>
-  <View style={{ flex:0.6, width:'100%', padding: 30,alignItems:'center'}} >
-   <ScrollView style={{width:'100%'}}>
 
-   <TouchableOpacity style={{backgroundColor:colors.violetPastel, flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column'}} onPress={() => setShouldShow1(!shouldShow1)}>
-     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', width:350, height:50}}>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>time</Text>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>description</Text>
+
+
+  
+  <View style={{ flex:0.5, padding: adaptToHeight(0.04),alignItems:'center'}} >
+   <ScrollView style={{width:adaptToWidth(0.9)}}>
+
+   <TouchableOpacity 
+   style={{backgroundColor:colors.violetPastel, flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column'}} 
+   onPress={() => setShouldShow1(!shouldShow1)}>
+     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center',width:adaptToWidth(0.9), height:adaptToHeight(0.065)}}>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>time</Text>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>description</Text>
        </View>
        {shouldShow1 ? (
-          <View style={{flexDirection:'row',justifyContent:'space-around', alignItems:'center', marginTop:30, marginBottom:30, borderTopWidth:1}}>
+          <View style={{flexDirection:'row',justifyContent:'space-around', alignItems:'center', marginTop:adaptToHeight(0.04), marginBottom:adaptToHeight(0.04), borderTopWidth:1}}>
          <TouchableOpacity>
           <Text style={{fontFamily:'Roboto-Bold', fontSize:20}}>Rejet</Text>
           </TouchableOpacity>
@@ -44,13 +51,16 @@ const NotificationsPending = () => {
    </TouchableOpacity>
 
 
-   <TouchableOpacity style={{backgroundColor:colors.PastelYellow,flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column', marginTop:30}} onPress={() => setShouldShow(!shouldShow)}>
-     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', width:350, height:50}}>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>time</Text>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>description</Text>
+   <TouchableOpacity 
+   style={{backgroundColor:colors.PastelYellow,flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column',marginTop:adaptToHeight(0.04)}} 
+   onPress={() => setShouldShow(!shouldShow)}>
+     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center',width:adaptToWidth(0.9), height:adaptToHeight(0.065)}}>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>time</Text>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>description</Text>
        </View>
        {shouldShow ? (
-          <View style={{flexDirection:'row',justifyContent:'space-evenly', alignItems:'center', marginTop:30, marginBottom:30, borderTopWidth:1}}>
+          <View 
+          style={{flexDirection:'row',justifyContent:'space-evenly', alignItems:'center',marginTop:adaptToHeight(0.04), marginBottom:adaptToHeight(0.04), borderTopWidth:1}}>
          <TouchableOpacity >
           <Text style={{fontFamily:'Roboto-Bold', fontSize:20}}>Oublié</Text>
           </TouchableOpacity>
@@ -61,13 +71,16 @@ const NotificationsPending = () => {
           </View>
         ) : null}
    </TouchableOpacity>
-   <TouchableOpacity style={{backgroundColor:colors.pastelPink, flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column', marginTop:30}} onPress={() => setShouldShow2(!shouldShow2)}>
-     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', width:350, height:50}}>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>time</Text>
-       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:30 }}>Pillule</Text>
+   <TouchableOpacity 
+   style={{backgroundColor:colors.pastelPink, flexWrap:'wrap', borderWidth:0.8, borderRadius:50, flexDirection:'column', marginTop:adaptToHeight(0.04)}} 
+   onPress={() => setShouldShow2(!shouldShow2)}>
+     <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', width:adaptToWidth(0.9), height:adaptToHeight(0.065)}}>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>time</Text>
+       <Text style={{fontFamily:'Montserrat-Bold', fontSize:20,marginRight:adaptToWidth(0.08) }}>Pillule</Text>
        </View>
        {shouldShow2 ? (
-          <View style={{flexDirection:'row',justifyContent:'space-around', alignItems:'center', marginTop:30, marginBottom:30, borderTopWidth:1}}>
+          <View
+           style={{flexDirection:'row',justifyContent:'space-around', alignItems:'center',marginTop:adaptToHeight(0.04), marginBottom:adaptToHeight(0.04), borderTopWidth:1}}>
          <TouchableOpacity >
           <Text style={{fontFamily:'Roboto-Bold', fontSize:25}}>Oublié</Text>
           </TouchableOpacity>
@@ -76,12 +89,7 @@ const NotificationsPending = () => {
           </View>
         ) : null}
         </TouchableOpacity>
-
-
    </ScrollView>
-   </View>
-   <View style={{width:'100%', justifyContent:'center', alignItems:'center'}}>
-   
    </View>
     </SafeAreaView>
   )

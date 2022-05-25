@@ -3,6 +3,7 @@ import React from 'react'
 import colors from '../../config/colors'
 import Input from '../../components/input'
 import { adaptToHeight, adaptToWidth } from '../../config/Demensions'
+import { StatusBar } from 'expo-status-bar'
 
 
 const LoginScreenMalade = (props) => {
@@ -13,20 +14,21 @@ const LoginScreenMalade = (props) => {
        backgroundColor: colors.primary,
        borderBottomColor:'black', borderBottomWidth:0.7, justifyContent:'flex-end'}}>
          
-     <Image style={{width:adaptToWidth(0.5),height:adaptToHeight(0.23), marginTop:adaptToHeight(0.06)}} 
+     <Image style={{width:adaptToWidth(0.5),height:adaptToHeight(0.23), marginTop:adaptToHeight(0.06), resizeMode:'stretch'}} 
      source={require('../../assets/logo.png')} />
-      <Text style={{fontFamily:"Lobster", margin:adaptToHeight(0.01), fontSize:30, color:colors.purple}}>Aide-Mémoire</Text>
-     <Text style={{fontFamily:"Lobster", margin:5, fontSize:15}}>Vos biens aimés, en pleine sécurité </Text>
+      <Text style={{fontFamily:"Lobster",padding:adaptToHeight(0.01), fontSize:30, color:colors.purple}}>Aide-Mémoire</Text>
+     <Text style={{fontFamily:"Lobster", padding:adaptToHeight(0.01), fontSize:15}}>Vos biens aimés, en pleine sécurité </Text>
     
      <View style={{ width:adaptToWidth(0.9),flexDirection:'row', justifyContent:'space-around'}}>
          <TouchableOpacity style={{alignItems:'center'}}>
-         <Text style={{fontFamily:'Montserrat-Bold',fontSize:17 }} 
+         <Text style={{fontFamily:'Montserrat-Bold',fontSize:17, color:colors.black }} 
          onPress = {() => props.navigation.navigate('Register_malade')}>S'inscrire</Text>
          </TouchableOpacity>
          <TouchableOpacity style={{alignItems:'center'}}>
              <Text style={{fontFamily:'Montserrat-Bold', fontSize:17 , color:colors.purple}} >Se connecter</Text> 
          </TouchableOpacity>
          </View>
+         
          </View>
 
 
@@ -34,7 +36,7 @@ const LoginScreenMalade = (props) => {
 
          <View style={{ flex:0.6,justifyContent:'flex-start',alignItems:'center'}}>
          
-             <Text style={{fontFamily:'Roboto', fontSize:20, color:'black'}}>Veuillez entrer vos informations:</Text>
+             <Text style={{fontFamily:'Roboto-Bold', fontSize:20, color:'black', paddingTop:adaptToHeight(0.02)}}>Veuillez entrer vos informations:</Text>
           <Input icon="md-mail" placeholder="Email" />
           <Input icon="lock-closed-outline" placeholder="Mot de passe" />
           <TouchableOpacity 
@@ -48,11 +50,11 @@ const LoginScreenMalade = (props) => {
          
           <TouchableOpacity>
           <Text style={{fontFamily:'Montserrat-Bold', color:'black', fontSize:15 ,color:colors.yesGreen}} 
-           onPress = {() => props.navigation.navigate('Register_proche')}>S'inscrire </Text>
+           onPress = {() => props.navigation.navigate('RegisterScreen')}>S'inscrire </Text>
           </TouchableOpacity>
           </View>
           </View>
-          
+          <StatusBar hidden={true}/>
     </SafeAreaView>
   )
 }

@@ -7,6 +7,7 @@ import { adaptToHeight,adaptToWidth } from '../../config/Demensions'
 
 
 
+
 const ConnectionAccount = (props) => {
   return (
     <SafeAreaView style={styles.back}>
@@ -15,9 +16,19 @@ const ConnectionAccount = (props) => {
     </View>
     
  
-    <View style={{flex:0.5 , alignItems:'center'}}><Ionicons name={"cloud-done-outline"}  style={{color:'black' , justifyContent:'center' }} size={adaptToWidth(0.6)}/>
-    <TouchableOpacity style={{flex:0.4, alignItems:'center'}}><Text onPress = {() => props.navigation.navigate('Pilulier1')}  style={{fontSize: 15,fontFamily:'Montserrat-Bold',color:colors.black, width:adaptToWidth(0.75), textAlign:'center'}}> Félicitations! Vous êtes connecté avec votre patient.Il est temps pour configurer le pilulier .</Text>
-                      <Text style={{fontSize:15, fontFamily:'Roboto', paddingTop:adaptToHeight(0.009)}}>Passer</Text>
+    <View style={{flex:0.5 , alignItems:'center',paddingBottom:adaptToHeight(0.19) }}><Ionicons name={"cloud-done-outline"}  style={{color:'black' , justifyContent:'center' }} size={adaptToWidth(0.6)}/>
+
+       <Text style={{fontSize: 15,fontFamily:'Montserrat-Bold',color:colors.black, width:adaptToWidth(0.75), textAlign:'center'}} numberOfLines={3}> Félicitations! Vous êtes connecté avec votre patient.Il est temps de commencer la configuration .</Text>
+
+    <TouchableOpacity style={{ marginBottom:adaptToHeight(0.03), width:adaptToWidth(0.75), height:adaptToHeight(0.07),backgroundColor:'#EECD12', borderRadius:30, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white' ,marginTop:adaptToHeight(0.03)}}   onPress = {() => props.navigation.navigate('Pilulier1')}>
+       <Text style={{color:'white', fontFamily:'Roboto-Bold', fontSize:20}}>Configurer le profil malade</Text>
+     </TouchableOpacity>
+     <TouchableOpacity style={{ width:adaptToWidth(0.75),height:adaptToHeight(0.07), backgroundColor:'#A3A31C',  borderRadius:30, alignItems:'center', justifyContent:'center',borderWidth:1, borderColor:'white' }} 
+        onPress = {() => props.navigation.navigate('Pilulier1')}>
+        <Text style={{color:'white', fontFamily:'Roboto-Bold', fontSize:20}}>Configurer le pilulier</Text>
+        </TouchableOpacity>
+         <TouchableOpacity>
+         <Text style={{fontSize:15, fontFamily:'Roboto', paddingTop:adaptToHeight(0.009)}}>Passer</Text>
     </TouchableOpacity>
 
     </View>
@@ -44,8 +55,8 @@ const ConnectionAccount = (props) => {
     fontFamily:'Lobster',
     color: colors.purple ,
     alignItems : 'center' ,
-      justifyContent: 'flex-start'
-     
+      justifyContent: 'flex-start' ,
+      paddingTop:adaptToHeight(0.002) ,
    },
     back:{
       backgroundColor: colors.primary,
